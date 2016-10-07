@@ -5,26 +5,26 @@ package io.github.randatic.tesgame;
  */
 public class Map {
 
-    String[][] map00;
+    private String[][] map00;
 
-    String[][] map01;
+    private String[][] map01;
 
-    String[][] map02;
+    private String[][] map02;
 
-    String[][] map10;
+    private String[][] map10;
 
-    String[][] map11;
+    private String[][] map11;
 
-    String[][] map12;
+    private String[][] map12;
 
-    String[][] map20;
+    private String[][] map20;
 
-    String[][] map21;
+    private String[][] map21;
 
-    String[][] map22;
+    private String[][] map22;
 
 
-    String[][] mapGlobalDiscovered = {
+    private String[][] mapGlobalDiscovered = {
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
             {"~", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "~"},
             {"~", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "~"},
@@ -43,7 +43,7 @@ public class Map {
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"}
     };
 
-    String[][] mapGlobalUndiscovered = {
+    private String[][] mapGlobal = {
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
             {"~", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "~"},
             {"~", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "~"},
@@ -60,10 +60,6 @@ public class Map {
             {"~", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "~"},
             {"~", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "~"},
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"}
-
-    };
-
-    String[][] mapLocal = {
 
     };
 }
