@@ -1,7 +1,7 @@
 package io.github.randatic.tesgame;
 
 /**
- * Created by csaper6 on 10/5/16.
+ * Created by yohan on 10/5/16.
  */
 public class Food extends Item {
 

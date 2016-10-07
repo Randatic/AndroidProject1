@@ -1,7 +1,7 @@
 package io.github.randatic.tesgame;
 
 /**
- * Created by csaper6 on 10/3/16.
+ * Created by Yohan on 10/3/16.
  */
 public abstract class Item {
 //TODO: create an item abstract class to have subclasses for money, weapons, and food
