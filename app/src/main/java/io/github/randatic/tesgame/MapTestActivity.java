@@ -12,11 +12,6 @@ public class MapTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_test);
 
-        map = (TextView) findViewById(R.id.textView);
-
     }
 
-    public void updateMap() {
-
-    }
 }

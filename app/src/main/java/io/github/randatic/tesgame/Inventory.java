@@ -26,8 +26,10 @@ public class Inventory {
 
     public int hasItem(Item i) {
         for (Item e: inventory) {
-            if()
+
         }
+
+        return -1;
     }
 
     public Item tradeItem(int oldItem, Item newItem) {
