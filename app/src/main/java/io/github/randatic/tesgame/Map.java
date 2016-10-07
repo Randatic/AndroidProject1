@@ -1,11 +1,23 @@
 package io.github.randatic.tesgame;
 
 /**
- * Created by csaper6 on 10/5/16.
+ * Created by Randy on 10/5/16.
  */
 public class Map {
 
+    private final static int UP = 0;
+    private final static int RIGHT = 1;
+    private final static int DOWN = 2;
+    private final static int LEFT = 3;
+
     private int[][] playerPosition = {{7}, {7}};
+
+    //  ---|LEGEND|---
+    private final static String PLAYER = "@";
+    private final static String INN = "I";
+    private final static String BOUND = "~";
+    private final static String UNDESCOVERED = "#";
+    private final static String NOTHING = ".";
 
 
     private String[][] mapGlobalDiscovered = {
@@ -26,7 +38,6 @@ public class Map {
             {"~", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "~"},
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"}
     };
-
     private String[][] mapGlobal = {
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
             {"~", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "~"},
@@ -46,4 +57,13 @@ public class Map {
             {"~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"}
 
     };
+
+    public void movePlayer(int direction) {
+        switch (direction) {
+            case UP: break;
+            case RIGHT: break;
+            case DOWN: break;
+            case LEFT: break;
+        }
+    }
 }
