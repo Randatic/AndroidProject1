@@ -45,24 +45,6 @@ public class CharacterActivity extends AppCompatActivity {
 
     }
 
-
-
-    private void updateSpd() {
-        spd += 5;
-        spdButton.setText("" + spd);
-    }
-
-    private void updateDef() {
-        def += 5;
-        defButton.setText("" + def);
-    }
-
-    private void updateAtk() {
-        atk += 5;
-        atkButton.setText("" + atk);
-    }
-
-
     private void wireWidgets() {
         atkButton = (Button) findViewById(R.id.button_atk);
         defButton = (Button) findViewById(R.id.button_def);
