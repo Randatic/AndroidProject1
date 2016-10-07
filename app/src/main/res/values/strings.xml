@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TesGAme</string>
+    <!-- Map Icons -->
+    <string name="mapPlayer">/@</string>
+    <string name="mapInn">I</string>
+    <string name="mapBound">~</string>
+    <string name="mapUndiscovered">#</string>
+    <string name="mapNothing">.</string>
+
 </resources>
