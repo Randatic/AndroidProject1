@@ -10,14 +10,10 @@ import android.widget.Button;
  */
 public class CharacterActivity extends AppCompatActivity {
     public Button atkButton, defButton, spdButton;
-    private int atk, def, spd;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);
-        atk = 10;
-        def = 10;
-        spd = 10;
         wireWidgets();
         final Character player = new Character();
 
