@@ -5,23 +5,7 @@ package io.github.randatic.tesgame;
  */
 public class Map {
 
-    private String[][] map00;
-
-    private String[][] map01;
-
-    private String[][] map02;
-
-    private String[][] map10;
-
-    private String[][] map11;
-
-    private String[][] map12;
-
-    private String[][] map20;
-
-    private String[][] map21;
-
-    private String[][] map22;
+    private int[][] playerPosition = {{7}, {7}};
 
 
     private String[][] mapGlobalDiscovered = {
