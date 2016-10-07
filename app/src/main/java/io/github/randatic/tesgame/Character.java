@@ -20,7 +20,11 @@ public class Character {
     }
 
     private void levelUp() {
-        lvl++;
+        lvl = lvl +1;
+        hp = hp + 10;
+        atk = atk + 2;
+        def = def + 2;
+        spd = spd + 1;
     }
 
     public void setAtk(int atk){
@@ -34,6 +38,10 @@ public class Character {
     public void setSpd(int spd){
         this.spd += spd;
     }
+
+
+
+
 
 }
 
