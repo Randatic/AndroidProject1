@@ -5,12 +5,15 @@ package io.github.randatic.tesgame;
  */
 public class Wallet extends Item {
 
-    public Wallet(String itemName, int value, int cost) {
-        super(itemName, value, cost);
+    public Wallet(String description, int value) {
+        super("Wallet", description, value);
     }
 
-    public int getMoney ()
-    {
-        return value;
+    public int getMoney () {
+        return super.getValue();
+    }
+
+    public void addMoney(int deposit) {
+        super.addToValue(deposit);
     }
 }
