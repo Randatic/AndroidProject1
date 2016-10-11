@@ -43,6 +43,9 @@ public class Character {
     public void setSpeed(int spd){
         this.spd = spd;
     }
+    public void setPosition(int X, int Y) {
+        pos.setPosition(new int[] {X, Y});
+    }
 
     //Getters
     public int getAttack() {

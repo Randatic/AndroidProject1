@@ -15,6 +15,7 @@ public class Map {
     private final static char UNDISCOVERED = '#';
     private final static char NOTHING = '.';
 
+    private Character player;
     private final static char[] LEGEND = Assets.ICONS;
 
     private Place[] places;
@@ -22,7 +23,7 @@ public class Map {
     private int[][] mapData;
     private char[][] mapGlobal;
 
-    public Map(Place[] places) {
+    public Map(Place[] places, Character player) {
         mapData = new int[][] {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -40,18 +41,20 @@ public class Map {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
         };
 
+        this.player = player;
         this.places = places;
         updateMap();
 
     }
 
-    public void movePlayer(int direction) {
-        switch (direction) {
-            case UP: break;
-            case RIGHT: break;
-            case DOWN: break;
-            case LEFT: break;
+    public char movePlayer(int direction) {
+        if(direction==UP) {
+            if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
+                player.setPosition(player.getPosition().getY()+1, player.getPosition().getX());
+                return placeAt(new Position(player.getPosition().getY()+1, player.getPosition().getX()));
+            }
         }
+        return NOTHING;
     }
 
     public void movePlayerUp() {
@@ -69,4 +72,7 @@ public class Map {
         }
     }
 
+    public char placeAt(Position p) {
+        return LEGEND[mapData[p.getY()][p.getX()]];
+    }
 }
