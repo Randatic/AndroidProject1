@@ -4,8 +4,15 @@ package io.github.randatic.tesgame;
  * Created by Ellis on 10/7/2016.
  */
 public class Character {
+
     private int hp, atk, def, spd, xp, maxXp, lvl;
-    public Character(){
+    private String name;
+
+    private Inventory inv;
+    private Position pos;
+
+    public Character(String name){
+        this.name = name;
         hp = 100;
         atk = 10;
         def = 10;
@@ -13,13 +20,13 @@ public class Character {
         xp = 0;
         maxXp = 50;
         lvl = 1;
-
-        if(xp == maxXp){
-            levelUp();
-        }
+        pos = new Position(7, 7);
+        inv = new Inventory();
     }
 
     private void levelUp() {
+        xp = xp - maxXp;
+        maxXp += maxXp/2;
         lvl = lvl +1;
         hp = hp + 10;
         atk = atk + 2;
@@ -27,21 +34,48 @@ public class Character {
         spd = spd + 1;
     }
 
-    public void setAtk(int atk){
-        this.atk += atk;
+    //Setters
+    public void setAttack(int atk){
+        this.atk = atk;
+    }
+    public void setDefence(int def){
+        this.def = def;
+    }
+    public void setSpeed(int spd){
+        this.spd = spd;
     }
 
-    public void setDef(int def){
-        this.def += def;
+    //Getters
+    public int getAttack() {
+        return atk;
     }
-
-    public void setSpd(int spd){
-        this.spd += spd;
+    public int getDefence() {
+        return def;
     }
-
-
-
-
+    public int getSpeed() {
+        return spd;
+    }
+    public int getHp() {
+        return hp;
+    }
+    public int getXp() {
+        return xp;
+    }
+    public int getMaxXp() {
+        return maxXp;
+    }
+    public int getLevel() {
+        return lvl;
+    }
+    public String getName() {
+        return name;
+    }
+    public Position getPosition() {
+        return pos;
+    }
+    public int[] getPositionAsArray() {
+        return pos.getPosition();
+    }
 
 }
 
