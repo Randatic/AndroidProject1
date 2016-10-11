@@ -9,14 +9,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="io.github.randatic.tesgame.MapTestActivity"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#a3a5ae">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView"
-        android:layout_weight="0.70" />
+        android:layout_weight="0.70"
+        android:background="#a3a5ae"
+        android:textColor="#ffffff" />
 
     <!--Controls-->
     <LinearLayout
@@ -59,5 +62,6 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView2"
-        android:layout_weight="0.30" />
+        android:layout_weight="0.30"
+        android:textColor="#ffffff" />
 </LinearLayout>
