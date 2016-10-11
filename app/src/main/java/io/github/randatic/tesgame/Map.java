@@ -15,7 +15,7 @@ public class Map {
     private final static char UNDISCOVERED = '#';
     private final static char NOTHING = '.';
 
-    private final static char[] LEGEND = {UNDISCOVERED, BOUND, NOTHING};
+    private final static char[] LEGEND = Assets.ICONS;
 
     private Place[] places;
 
