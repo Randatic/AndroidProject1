@@ -5,6 +5,8 @@ package io.github.randatic.tesgame;
  */
 public class Place {
 
+    //Place Icons
+
     private Position position;
     private String name;
     private String description;
