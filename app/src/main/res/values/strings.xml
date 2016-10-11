@@ -5,4 +5,8 @@
     <string name="_10">10</string>
     <string name="defence">Defence:</string>
     <string name="speed">Speed:</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="up">Up</string>
+    <string name="down">Down</string>
 </resources>

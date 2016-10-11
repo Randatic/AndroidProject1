@@ -9,14 +9,13 @@ import android.widget.Button;
  * Created by Ellis on 10/5/2016.
  */
 public class CharacterActivity extends AppCompatActivity {
-    public Button atkButton, defButton, spdButton, okButton;
-    private String name;
+    public Button atkButton, defButton, spdButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);
         wireWidgets();
-        final Character player = new Character(name);
+        final Character player = new Character();
 
         atkButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +38,6 @@ public class CharacterActivity extends AppCompatActivity {
             }
         });
 
-        okButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
 
     }
 
@@ -53,7 +45,6 @@ public class CharacterActivity extends AppCompatActivity {
         atkButton = (Button) findViewById(R.id.button_atk);
         defButton = (Button) findViewById(R.id.button_def);
         spdButton = (Button) findViewById(R.id.button_spd);
-        okButton = (Button) findViewById(R.id.button_ok);
     }
 
 }
