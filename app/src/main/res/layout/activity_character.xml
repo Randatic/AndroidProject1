@@ -10,12 +10,19 @@
     tools:context="io.github.randatic.tesgame.CharacterActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/your_character"
-        android:id="@+id/textView_chartitle" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/your_character"
+            android:id="@+id/textView_chartitle" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -73,4 +80,5 @@
             android:text="@string/_10"
             android:id="@+id/button_spd" />
     </LinearLayout>
+
 </LinearLayout>
