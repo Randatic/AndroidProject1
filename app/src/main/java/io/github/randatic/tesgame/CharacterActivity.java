@@ -20,21 +20,21 @@ public class CharacterActivity extends AppCompatActivity {
         atkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setAtk(5);
+                player.setAttack(5);
             }
         });
 
         defButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setDef(5);
+                player.setDefence(5);
             }
         });
 
         spdButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                player.setSpd(5);
+                player.setSpeed(5);
             }
         });
 
