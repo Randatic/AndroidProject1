@@ -14,4 +14,5 @@ public class Weapon extends Item{
     {
         return super.getValue();
     }
+
 }
