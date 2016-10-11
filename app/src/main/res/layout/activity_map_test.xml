@@ -10,7 +10,7 @@
     tools:context="io.github.randatic.tesgame.MapTestActivity"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="#a3a5ae">
+    android:background="#696969">
 
     <TextView
         android:layout_width="match_parent"
@@ -18,7 +18,6 @@
         android:text="New Text"
         android:id="@+id/textView"
         android:layout_weight="0.70"
-        android:background="#a3a5ae"
         android:textColor="#ffffff" />
 
     <!--Controls-->
