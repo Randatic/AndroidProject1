@@ -30,7 +30,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="left"/>
+            android:text="@string/left"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -41,19 +41,19 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="up"/>
+                android:text="@string/up"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="down" />
+                android:text="@string/down" />
 
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="right" />
+            android:text="@string/right" />
 
     </LinearLayout>
 

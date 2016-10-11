@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">TesGAme</string>
-    <!-- Map Icons -->
-    <string name="mapPlayer">/@</string>
-    <string name="mapInn">I</string>
-    <string name="mapBound">~</string>
-    <string name="mapUndiscovered">#</string>
-    <string name="mapNothing">.</string>
+    <string name="your_character">Your Character:</string>
+    <string name="attack">Attack:</string>
+    <string name="_10">10</string>
+    <string name="defence">Defence:</string>
+    <string name="speed">Speed:</string>
 </resources>
