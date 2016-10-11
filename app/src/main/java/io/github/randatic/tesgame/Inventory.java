@@ -20,10 +20,10 @@ public class Inventory {
         return inventory.get(index);
     }
 
-    public void useItem() {
+    public void useItem(Item i)
+    {
 
     }
-
     public int hasItem(Item i) {
         for (Item e: inventory) {
 
