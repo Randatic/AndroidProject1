@@ -11,6 +11,7 @@ import android.widget.Button;
 public class CharacterActivity extends AppCompatActivity {
     public Button atkButton, defButton, spdButton;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);

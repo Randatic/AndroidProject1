@@ -11,8 +11,7 @@ public class Character {
     private Inventory inv;
     private Position pos;
 
-    public Character(String name){
-        this.name = name;
+    public Character(){
         hp = 100;
         atk = 10;
         def = 10;
@@ -66,9 +65,6 @@ public class Character {
     }
     public int getLevel() {
         return lvl;
-    }
-    public String getName() {
-        return name;
     }
     public Position getPosition() {
         return pos;
