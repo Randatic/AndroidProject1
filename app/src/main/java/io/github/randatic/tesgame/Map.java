@@ -42,6 +42,7 @@ public class Map {
 
         this.places = places;
         updateMap();
+
     }
 
     public void movePlayer(int direction) {
