@@ -11,19 +11,18 @@ public class Map {
     private final static int LEFT = 3;
 
     //  ---|LEGEND|---
-    private final static String PLAYER = "@";
-    private final static String INN = "I";
-    private final static String BOUND = "~";
-    private final static String UNDISCOVERED = "#";
-    private final static String NOTHING = ".";
-    private final static String ENEMY = "E";
+    private final static char BOUND = '~';
+    private final static char UNDISCOVERED = '#';
+    private final static char NOTHING = '.';
 
-    private final static String[] LEGEND = {UNDISCOVERED, BOUND, NOTHING, INN, PLAYER, ENEMY};
+    private final static char[] LEGEND = {UNDISCOVERED, BOUND, NOTHING};
+
+    private Place[] places;
 
     private int[][] mapData;
-    private String[][] mapGlobal;
+    private char[][] mapGlobal;
 
-    public Map() {
+    public Map(Place[] places) {
         mapData = new int[][] {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -41,6 +40,7 @@ public class Map {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
         };
 
+        this.places = places;
         updateMap();
     }
 
@@ -53,6 +53,13 @@ public class Map {
         }
     }
 
+    public void movePlayerUp() {
+
+    }
+
+    public void addMonster(Monster m) {
+
+    }
     public void updateMap() {
         for(int x = 0; x < mapData.length; x++) {
             for(int y = 0; y < mapData[x].length;y++) {
