@@ -59,10 +59,33 @@ public class Monster {
     private void Hag(){
         name = "Hag";
         icon = 'H';
+        area = "Swamp";
         hp = 50;
         atk = 30;
         def = 20;
         spd = 20;
+        xp = 45;
+    }
+
+    private void Frog(){
+        name = "Frog";
+        icon = 'F';
+        area = "Swamp";
+        hp = 30;
+        atk = 25;
+        def = 20;
+        spd = 15;
+        xp = 25;
+    }
+
+    private void BogMonster(){
+        name = "Bog Monster";
+        icon = 'B';
+        area = "Swamp";
+        hp = 65;
+        atk = 15;
+        def = 30;
+        spd = 10;
         xp = 45;
     }
 
