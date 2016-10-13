@@ -46,6 +46,10 @@ public class Monster {
         xp = 5;
     }
 
+    public void PlainsSoul(){
+
+    }
+
     public void Null(){
         name = "Null";
         icon = 'N';
