@@ -25,8 +25,10 @@ public class Assets {
     public final static char INN = 'I';             //5
     public final static char MERCHANT = '$';        //6
 
+    //Objects
+    public final static Place hullHouse = new Place(new Position(3, 6), "Hull House", "Settlement House", INN);
+
+    //Arrays
     public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
-
-    public static char[] PLACES = {INN, MERCHANT};
-
+    public static Place[] PLACES = {hullHouse};
 }
