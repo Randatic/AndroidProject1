@@ -7,7 +7,6 @@ public class Monster {
     private int atk, def, spd, hp, xp;
     private String name, area;
     private char icon;
-    private boolean canFlee;
 
     public Monster(){
 
@@ -47,6 +46,17 @@ public class Monster {
     }
 
     public void PlainsSoul(){
+        name = "Plain's Soul";
+        icon = 'P';
+        area = "Plains";
+        hp = 200;
+        atk = 35;
+        def = 50;
+        spd = 30;
+        xp = 100;
+    }
+
+    private void Hag(){
 
     }
 
