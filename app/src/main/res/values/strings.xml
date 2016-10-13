@@ -9,4 +9,5 @@
     <string name="right">Right</string>
     <string name="up">Up</string>
     <string name="down">Down</string>
+    <string name="point">point left: </string>
 </resources>

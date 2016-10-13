@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.TextView;
 /**
  * Created by Ellis on 10/5/2016.
  */
-public class CharacterActivity extends AppCompatActivity {
+public class CharacterActivity extends AppCompatActivity{
     public Button atkButton, defButton, spdButton;
+    public TextView nameView;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class CharacterActivity extends AppCompatActivity {
             }
         });
 
+        nameView.setText(nameView + player.getName());
+
 
     }
 
@@ -46,6 +50,7 @@ public class CharacterActivity extends AppCompatActivity {
         atkButton = (Button) findViewById(R.id.button_atk);
         defButton = (Button) findViewById(R.id.button_def);
         spdButton = (Button) findViewById(R.id.button_spd);
+        nameView = (TextView) findViewById(R.id.textView_chartitle);
     }
 
 }

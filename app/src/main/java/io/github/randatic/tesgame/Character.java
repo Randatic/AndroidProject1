@@ -44,8 +44,13 @@ public class Character {
         this.spd = spd;
     }
     public void setPosition(int X, int Y) {
-        pos.setPosition(new int[] {X, Y});
+        pos.setPosition(new int[]{X, Y});
     }
+        public void setHealth (int hp)
+    {
+        this.hp = hp;
+    }
+
 
     //Getters
     public int getAttack() {
@@ -75,6 +80,6 @@ public class Character {
     public int[] getPositionAsArray() {
         return pos.getPosition();
     }
-
+    public String getName() {return name;}
 }
 
