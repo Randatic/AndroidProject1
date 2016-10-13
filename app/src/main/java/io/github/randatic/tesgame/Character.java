@@ -75,6 +75,6 @@ public class Character {
     public int[] getPositionAsArray() {
         return pos.getPosition();
     }
-
+    public String getName() {return name;}
 }
 
