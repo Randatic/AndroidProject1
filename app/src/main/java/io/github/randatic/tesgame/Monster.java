@@ -57,7 +57,13 @@ public class Monster {
     }
 
     private void Hag(){
-
+        name = "Hag";
+        icon = 'H';
+        hp = 50;
+        atk = 30;
+        def = 20;
+        spd = 20;
+        xp = 45;
     }
 
     public void Null(){
