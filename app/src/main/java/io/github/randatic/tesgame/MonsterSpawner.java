@@ -11,34 +11,34 @@ public class MonsterSpawner extends Monster {
 
     }
 
-    public Monster Spawn(int area){
+    public Monster spawn(int area){
         Monster m = new Monster();
         if (area == 1) {
-            m = SpawnMtnMon();
+            m = spawnMtnMon();
         }
         else if(area == 2){
-            m = SpawnForestMon();
+            m = spawnForestMon();
         }
         else if(area == 3){
-            m = SpawnDesertMon();
+            m = spawnDesertMon();
         }
         else if(area == 4){
             m = SpawnSwampMon();
         }
         else if(area == 5){
-            m = SpawnPlainMon();
+            m = spawnPlainMon();
         }
         else if(area == 6){
-            m = SpawnGraveMon();
+            m = spawnGraveMon();
         }
         else if(area == 7){
-            m = SpawnLakeMon();
+            m = spawnLakeMon();
         }
         else if(area == 8){
-            m = SpawnRiverMon();
+            m = spawnRiverMon();
         }
         else if(area == 9){
-            m = SpawnBeachMon();
+            m = spawnBeachMon();
         }
         else {
             m.Null();
@@ -46,24 +46,24 @@ public class MonsterSpawner extends Monster {
         return m;
     }
 
-    private Monster SpawnBeachMon() {
+    private Monster spawnBeachMon() {
 
         return null;
     }
 
-    private Monster SpawnRiverMon() {
+    private Monster spawnRiverMon() {
         return null;
     }
 
-    private Monster SpawnLakeMon() {
+    private Monster spawnLakeMon() {
         return null;
     }
 
-    private Monster SpawnGraveMon() {
+    private Monster spawnGraveMon() {
         return null;
     }
 
-    private Monster SpawnPlainMon() {
+    private Monster spawnPlainMon() {
         return null;
     }
 
@@ -71,15 +71,15 @@ public class MonsterSpawner extends Monster {
         return null;
     }
 
-    private Monster SpawnDesertMon() {
+    private Monster spawnDesertMon() {
         return null;
     }
 
-    private Monster SpawnForestMon() {
+    private Monster spawnForestMon() {
         return null;
     }
 
-    private Monster SpawnMtnMon() {
+    private Monster spawnMtnMon() {
         return null;
     }
 }
