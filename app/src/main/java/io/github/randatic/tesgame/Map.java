@@ -89,4 +89,9 @@ public class Map {
     public char placeAt(Position p) {
         return LEGEND[mapData[p.getY()][p.getX()]];
     }
+
+    public char[][] getMap() {
+        return mapGlobal;
+    }
+    public int[][] getMapDat() { return mapData; }
 }
