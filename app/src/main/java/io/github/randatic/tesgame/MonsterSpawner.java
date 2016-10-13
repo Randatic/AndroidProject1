@@ -8,7 +8,8 @@ public class MonsterSpawner extends Monster {
 
     }
 
-    private void Spawn(int area){
+    private Monster Spawn(int area){
+        Monster m = new Monster();
         if (area == 1) {
             SpawnMtnMon();
         }
@@ -37,8 +38,9 @@ public class MonsterSpawner extends Monster {
             SpawnBeachMon();
         }
         else {
-            return Null();
+            m.Null();
         }
+        return m;
     }
 
     private void SpawnBeachMon() {
