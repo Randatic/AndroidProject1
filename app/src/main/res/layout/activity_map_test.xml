@@ -15,8 +15,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView"
+        android:text="New Text\nMore Text"
+        android:id="@+id/textViewMap"
         android:layout_weight="0.70"
         android:textColor="#ffffff" />
 
@@ -60,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/textView2"
+        android:id="@+id/textViewEvents"
         android:layout_weight="0.30"
         android:textColor="#ffffff" />
 </LinearLayout>
