@@ -8,7 +8,7 @@ public class MonsterSpawner extends Monster {
 
     }
 
-    private Monster Spawn(int area){
+    private void Spawn(int area){
         if (area == 1) {
             SpawnMtnMon();
         }

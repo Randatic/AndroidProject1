@@ -13,7 +13,7 @@ public class Monster {
 
     }
 
-    private void Slime() {
+    public void Slime() {
         name = "Slime";
         icon = 'S';
         area = "Plains";
@@ -24,7 +24,7 @@ public class Monster {
         xp = 10;
     }
 
-    private void Wolf() {
+    public void Wolf() {
         name = "Wolf";
         icon = 'W';
         area = "Plains";
@@ -35,7 +35,7 @@ public class Monster {
         xp = 15;
     }
 
-    private void Deer() {
+    public void Deer() {
         name = "Deer";
         icon = 'D';
         area = "Plains";
@@ -46,7 +46,7 @@ public class Monster {
         xp = 5;
     }
 
-    private void Null(){
+    public void Null(){
         name = "Null";
         icon = 'N';
         hp = Integer.MAX_VALUE;
