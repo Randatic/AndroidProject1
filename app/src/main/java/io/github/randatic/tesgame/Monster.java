@@ -17,36 +17,43 @@ public class Monster {
         name = "Slime";
         icon = 'S';
         area = "Plains";
-        hp = 10;
+        hp = 20;
         atk = 5;
         def = 5;
         spd = 5;
         xp = 10;
-        canFlee = false;
     }
 
     private void Wolf() {
         name = "Wolf";
         icon = 'W';
         area = "Plains";
-        hp = 15;
+        hp = 25;
         atk = 10;
         def = 5;
         spd = 15;
         xp = 15;
-        canFlee = false;
     }
 
     private void Deer() {
         name = "Deer";
         icon = 'D';
         area = "Plains";
-        hp = 20;
-        atk = 0;
-        def = 20;
+        hp = 30;
+        atk = 5;
+        def = 0;
         spd = 20;
-        xp = 20;
-        canFlee = true;
+        xp = 5;
+    }
+
+    private void Null(){
+        name = "Null";
+        icon = 'N';
+        hp = Integer.MAX_VALUE;
+        atk = Integer.MAX_VALUE;
+        def = Integer.MAX_VALUE;
+        spd = Integer.MAX_VALUE;
+        xp = Integer.MAX_VALUE;
     }
 
 }
