@@ -4,38 +4,41 @@ package io.github.randatic.tesgame;
  * Created by Ellis on 10/11/2016.
  */
 public class MonsterSpawner extends Monster {
+
+    public static final int MOUNTAIN = 1;
+
     public MonsterSpawner(){
 
     }
 
-    private Monster Spawn(int area){
+    public Monster Spawn(int area){
         Monster m = new Monster();
         if (area == 1) {
-            SpawnMtnMon();
+            m = SpawnMtnMon();
         }
         else if(area == 2){
-            SpawnForestMon();
+            m = SpawnForestMon();
         }
         else if(area == 3){
-            SpawnDesertMon();
+            m = SpawnDesertMon();
         }
         else if(area == 4){
-            SpawnSwampMon();
+            m = SpawnSwampMon();
         }
         else if(area == 5){
-            SpawnPlainMon();
+            m = SpawnPlainMon();
         }
         else if(area == 6){
-            SpawnGraveMon();
+            m = SpawnGraveMon();
         }
         else if(area == 7){
-            SpawnLakeMon();
+            m = SpawnLakeMon();
         }
         else if(area == 8){
-            SpawnRiverMon();
+            m = SpawnRiverMon();
         }
         else if(area == 9){
-            SpawnBeachMon();
+            m = SpawnBeachMon();
         }
         else {
             m.Null();
@@ -43,30 +46,40 @@ public class MonsterSpawner extends Monster {
         return m;
     }
 
-    private void SpawnBeachMon() {
+    private Monster SpawnBeachMon() {
+
+        return null;
     }
 
-    private void SpawnRiverMon() {
+    private Monster SpawnRiverMon() {
+        return null;
     }
 
-    private void SpawnLakeMon() {
+    private Monster SpawnLakeMon() {
+        return null;
     }
 
-    private void SpawnGraveMon() {
+    private Monster SpawnGraveMon() {
+        return null;
     }
 
-    private void SpawnPlainMon() {
+    private Monster SpawnPlainMon() {
+        return null;
     }
 
-    private void SpawnSwampMon() {
+    private Monster SpawnSwampMon() {
+        return null;
     }
 
-    private void SpawnDesertMon() {
+    private Monster SpawnDesertMon() {
+        return null;
     }
 
-    private void SpawnForestMon() {
+    private Monster SpawnForestMon() {
+        return null;
     }
 
-    private void SpawnMtnMon() {
+    private Monster SpawnMtnMon() {
+        return null;
     }
 }
