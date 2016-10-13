@@ -73,10 +73,6 @@ public class Map {
         return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
     }
 
-    public void movePlayerUp() {
-
-    }
-
     public void addMonster(Monster m) {
 
     }
