@@ -13,20 +13,21 @@
     android:background="#696969">
 
     <TextView
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Text\nMore Text"
         android:id="@+id/textViewMap"
+        android:textScaleX="1.5"
         android:textColor="#ffffff"
-        android:textScaleX="1.6"
-        android:textSize="16dp" />
+        android:textSize="20sp"
+        android:gravity="center"/>
 
     <!--Controls-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center_vertical">
+        android:gravity="center">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +61,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="Events:"
         android:id="@+id/textViewEvents"
         android:layout_weight="0.30"
         android:textColor="#ffffff" />
