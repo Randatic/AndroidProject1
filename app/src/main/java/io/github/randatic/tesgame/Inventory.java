@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Inventory {
 
     ArrayList<Item> inventory;
+    public Character character;
 
     public Inventory () {
         inventory = new ArrayList<Item>();
@@ -22,6 +23,17 @@ public class Inventory {
 
     public void useItem(Item i)
     {
+        if (i.getItemDescription() == "Food")
+        {
+            character.setHealth(character.getHp() + i.getValue());
+            inventory.remove(i);
+        }
+
+        else
+        {
+            character.setAttack(character.getAttack() + i.getValue());
+            inventory.remove(i);
+        }
 
     }
     public int hasItem(Item i) {
