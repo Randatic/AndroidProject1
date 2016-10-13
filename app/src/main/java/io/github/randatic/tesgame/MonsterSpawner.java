@@ -5,8 +5,6 @@ package io.github.randatic.tesgame;
  */
 public class MonsterSpawner extends Monster {
 
-    public static final int MOUNTAIN = 1;
-
     public MonsterSpawner(){
 
     }
@@ -47,7 +45,6 @@ public class MonsterSpawner extends Monster {
     }
 
     private Monster spawnBeachMon() {
-
         return null;
     }
 
