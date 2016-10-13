@@ -50,11 +50,27 @@ public class Map {
     public char movePlayer(int direction) {
         if(direction==UP) {
             if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
-                player.setPosition(player.getPosition().getY()+1, player.getPosition().getX());
-                return placeAt(new Position(player.getPosition().getY()+1, player.getPosition().getX()));
+                player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
+                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
+            }
+        } else if(direction==RIGHT) {
+            if(mapData[player.getPosition().getY()][player.getPosition().getX()+1]!=1) {
+                player.setPosition(player.getPosition().getX()+1, player.getPosition().getY());
+                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
+            }
+        } else if(direction==DOWN) {
+            if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
+                player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
+                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
+            }
+        } else if(direction==LEFT) {
+            if(mapData[player.getPosition().getY()][player.getPosition().getX()-1]!=1) {
+                player.setPosition(player.getPosition().getX()-1, player.getPosition().getY());
+                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
             }
         }
-        return NOTHING;
+
+        return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
     }
 
     public void movePlayerUp() {
@@ -70,6 +86,8 @@ public class Map {
                 mapGlobal[x][y] = LEGEND[mapData[x][y]];
             }
         }
+
+        mapGlobal[player.getPosition().getY()][player.getPosition().getY()] = LEGEND[3];
     }
 
     public char placeAt(Position p) {
