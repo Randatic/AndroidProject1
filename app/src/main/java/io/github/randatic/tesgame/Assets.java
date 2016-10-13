@@ -7,18 +7,25 @@ package io.github.randatic.tesgame;
  */
 public class Assets {
 
+
+    //Map Directions
+    public final static int UP = 0;
+    public final static int RIGHT = 1;
+    public final static int DOWN = 2;
+    public final static int LEFT = 3;
+
     //Icons
-    public final static char BOUND = '~';
-    public final static char UNDISCOVERED = '#';
-    public final static char NOTHING = '.';
+    public final static char UNDISCOVERED = '#';    //0
+    public final static char BOUND = '~';           //1
+    public final static char NOTHING = '.';         //2
 
-    public final static char PLAYER = '@';
-    public final static char MONSTER = 'M';
+    public final static char PLAYER = '@';          //3
+    public final static char MONSTER = 'M';         //4
 
-    public final static char INN = 'I';
-    public final static char MERCHANT = '$';
+    public final static char INN = 'I';             //5
+    public final static char MERCHANT = '$';        //6
 
-    public static char[] ICONS = {BOUND, UNDISCOVERED, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
+    public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
 
     public static char[] PLACES = {INN, MERCHANT};
 
