@@ -36,7 +36,6 @@ public class MonsterSpawner extends Monster {
         else if(area == 9){
             SpawnBeachMon();
         }
-            return null;
 
     }
 
