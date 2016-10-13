@@ -40,6 +40,7 @@ public class Monster {
     private void Deer() {
         name = "Deer";
         icon = 'D';
+        area = "Plains";
         hp = 20;
         atk = 0;
         def = 20;
