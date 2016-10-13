@@ -1,10 +1,10 @@
 package io.github.randatic.tesgame;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.widget.TextView;
 
-public class MapTestActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private TextView tvMap;
     private Map map;
@@ -14,7 +14,7 @@ public class MapTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map_test);
+        setContentView(R.layout.activity_main);
 
         places = new Place[] {new Place(new Position(3, 6), "Hull House", "Settlement House", Assets.INN)};
         character = new Character();
@@ -37,5 +37,4 @@ public class MapTestActivity extends AppCompatActivity {
 
         tvMap.setText(display);
     }
-
 }
