@@ -89,6 +89,17 @@ public class Monster {
         xp = 45;
     }
 
+    private void SwampSoul(){
+        name = "Swamp Soul";
+        icon = 'S';
+        area = "Swamp";
+        hp = 250;
+        atk = 40;
+        def = 70;
+        spd = 40;
+        xp = 200;
+    }
+
     public void Null(){
         name = "Null";
         icon = 'N';
