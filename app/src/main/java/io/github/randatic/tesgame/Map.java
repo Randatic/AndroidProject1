@@ -15,6 +15,7 @@ public class Map {
     private final static char UNDISCOVERED = '#';
     private final static char NOTHING = '.';
 
+    //Variables
     private Character player;
     private final static char[] LEGEND = Assets.ICONS;
 
@@ -43,6 +44,7 @@ public class Map {
 
         this.player = player;
         this.places = places;
+        mapGlobal = new char[mapData.length][mapData[0].length];
         updateMap();
 
     }
