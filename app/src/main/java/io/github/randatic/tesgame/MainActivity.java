@@ -1,7 +1,8 @@
 package io.github.randatic.tesgame;
 
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         places = new Place[] {new Place(new Position(3, 6), "Hull House", "Settlement House", Assets.INN)};
         character = new Character();
         tvMap = (TextView) findViewById(R.id.textViewMap);
+        tvMap.setTypeface(Typeface.MONOSPACE);
         map = new Map(places, character);
         displayMap();
 
