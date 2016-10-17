@@ -5,10 +5,10 @@ package io.github.randatic.tesgame;
  */
 public class Map {
 
-    private final static int UP = 0;
-    private final static int RIGHT = 1;
-    private final static int DOWN = 2;
-    private final static int LEFT = 3;
+    public final static int UP = 0;
+    public final static int RIGHT = 1;
+    public final static int DOWN = 2;
+    public final static int LEFT = 3;
 
     //  ---|LEGEND|---
     private final static char BOUND = '~';

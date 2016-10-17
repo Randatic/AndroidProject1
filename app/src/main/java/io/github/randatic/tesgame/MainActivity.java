@@ -35,35 +35,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tvMap.setText(display);
     }
+
     @Override
     public void onClick(View view)
     {
-        int number = 0;
-        if (view == up)
+
+        if (view.getId() == R.id.buttonUp)
         {
-            number = 0;
-            map.movePlayer(number);
+            map.movePlayer(Map.UP);
             map.updateMap();
             displayMap();
         }
-        else if (view == right)
+        else if (view.getId() == R.id.buttonRight)
         {
-            number = 1;
-            map.movePlayer(number);
+            map.movePlayer(Map.RIGHT);
             map.updateMap();
             displayMap();
         }
-        else if (view == down)
+        else if (view.getId() == R.id.buttonDown)
         {
-            number = 2;
-            map.movePlayer(number);
+            map.movePlayer(Map.DOWN);
             map.updateMap();
             displayMap();
         }
-        else
+        else if (view.getId() == R.id.buttonLeft)
         {
-            number = 3;
-            map.movePlayer(number);
+            map.movePlayer(Map.LEFT);
             map.updateMap();
             displayMap();
         }
