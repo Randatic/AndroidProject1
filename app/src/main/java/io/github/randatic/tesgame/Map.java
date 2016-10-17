@@ -81,9 +81,9 @@ public class Map {
         }
 
         for(Place p : Assets.PLACES) {
-           mapGlobal[p.getPosition().getY()][p.getPosition().getY()] = p.getIcon();
+           mapGlobal[p.getPosition().getY()][p.getPosition().getX()] = p.getIcon();
         }
-        mapGlobal[player.getPosition().getY()][player.getPosition().getY()] = LEGEND[3];
+        mapGlobal[player.getPosition().getY()][player.getPosition().getX()] = LEGEND[3];
     }
 
     public char placeAt(Position p) {
