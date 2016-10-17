@@ -135,7 +135,7 @@ public class Monster {
 
     public void gysoul(){
         name = "Graveyard Soul";
-        icon = 'S';
+        icon = 'G';
         area = "Gyard";
         hp = 100;
         atk = 20;
@@ -179,7 +179,7 @@ public class Monster {
 
     public void fSoul(){
         name = "Forest Soul";
-        icon = 'S';
+        icon = 'F';
         area = "Forest";
         hp = 120;
         atk = 50;
@@ -197,6 +197,50 @@ public class Monster {
         def = 30;
         spd = 20;
         xp = 90;
+    }
+
+    public void crane(){
+        name = "Crane";
+        icon = 'C';
+        area = "River";
+        hp = 20;
+        atk = 30;
+        def = 20;
+        spd = 60;
+        xp = 45;
+    }
+
+    public void hippo(){
+        name = "Hippo";
+        icon = 'H';
+        area = "River";
+        hp = 60;
+        atk = 70;
+        def = 30;
+        spd = 5;
+        xp = 50;
+    }
+
+    public void rSoul(){
+        name = "River Soul";
+        icon = 'R';
+        area = "River";
+        hp = 130;
+        atk = 50;
+        def = 60;
+        spd = 50;
+        xp = 85;
+    }
+
+    public void giant(){
+        name = "Giant";
+        icon = 'G';
+        area = "Mountain";
+        hp = 80;
+        atk = 70;
+        def = 40;
+        spd = 10;
+        xp = 60;
     }
 
     public void pure(){
