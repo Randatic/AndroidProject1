@@ -4,7 +4,7 @@ package io.github.randatic.tesgame;
  * Created by Yohan on 10/3/16.
  */
 public abstract class Item {
-    //TODO finish getCost() method
+
 
     private String itemName;
     private String itemDescription;
@@ -35,13 +35,6 @@ public abstract class Item {
     {
         return value;
     }
-
-    //unfinished
-    public void getCost() {
-        //cost will be based on value
-        //we will mathematicaly find cost through value
-    }
-
     //Variable Modifiers
     public void addToValue(int n) {
         value += n;

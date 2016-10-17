@@ -5,10 +5,10 @@ package io.github.randatic.tesgame;
  */
 public class Map {
 
-    private final static int UP = 0;
-    private final static int RIGHT = 1;
-    private final static int DOWN = 2;
-    private final static int LEFT = 3;
+    public final static int UP = 0;
+    public final static int RIGHT = 1;
+    public final static int DOWN = 2;
+    public final static int LEFT = 3;
 
     //  ---|LEGEND|---
     private final static char BOUND = '~';
@@ -19,12 +19,10 @@ public class Map {
     private Character player;
     private final static char[] LEGEND = Assets.ICONS;
 
-    private Place[] places;
-
     private int[][] mapData;
     private char[][] mapGlobal;
 
-    public Map(Place[] places, Character player) {
+    public Map(Character player) {
         mapData = new int[][] {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -43,7 +41,6 @@ public class Map {
         };
 
         this.player = player;
-        this.places = places;
         mapGlobal = new char[mapData.length][mapData[0].length];
         updateMap();
 
@@ -77,13 +74,13 @@ public class Map {
 
     }
     public void updateMap() {
-        for(int x = 0; x < mapData.length; x++) {
-            for(int y = 0; y < mapData[x].length;y++) {
-                mapGlobal[x][y] = LEGEND[mapData[x][y]];
+        for(int y = 0; y < mapData.length; y++) {
+            for(int x = 0; x < mapData[y].length;x++) {
+                mapGlobal[y][x] = LEGEND[mapData[y][x]];
             }
         }
 
-        for(Place p : places) {
+        for(Place p : Assets.PLACES) {
            mapGlobal[p.getPosition().getY()][p.getPosition().getY()] = p.getIcon();
         }
         mapGlobal[player.getPosition().getY()][player.getPosition().getY()] = LEGEND[3];
