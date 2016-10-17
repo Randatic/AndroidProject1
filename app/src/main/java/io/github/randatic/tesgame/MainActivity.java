@@ -3,6 +3,7 @@ package io.github.randatic.tesgame;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,20 +20,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        wirewidget();
+        wireWidgets();
         displayMap();
         displayEvent();
     }
 
     public void displayMap() {
-        String display = "";
+        SpannableStringBuilder display = new SpannableStringBuilder("");
         for(int y = 0; y < map.getMap().length; y++) {
             for(int x = 0; x < map.getMap()[y].length; x++) {
-                display += map.getMap()[y][x];
+                display.append(map.getMap()[y][x]);
             }
-            display += "\n";
+            display.append("\n");
         }
-
         tvMap.setText(display);
     }
 
@@ -43,30 +43,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.buttonUp)
         {
             map.movePlayer(Map.UP);
-            map.updateMap();
-            displayMap();
         }
         else if (view.getId() == R.id.buttonRight)
         {
             map.movePlayer(Map.RIGHT);
-            map.updateMap();
-            displayMap();
         }
         else if (view.getId() == R.id.buttonDown)
         {
             map.movePlayer(Map.DOWN);
-            map.updateMap();
-            displayMap();
         }
         else if (view.getId() == R.id.buttonLeft)
         {
             map.movePlayer(Map.LEFT);
-            map.updateMap();
-            displayMap();
         }
+        map.updateMap();
+        displayMap();
     }
 
-    public void wirewidget()
+    public void wireWidgets()
     {
         character = new Character();
         map = new Map(character);
@@ -87,16 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left.setOnClickListener(this);
     }
 
-
-
-
-
-
-
     public void displayEvent()
     {
 
     }
-
-
 }
