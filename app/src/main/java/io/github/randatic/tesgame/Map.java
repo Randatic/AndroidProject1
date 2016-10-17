@@ -74,9 +74,9 @@ public class Map {
 
     }
     public void updateMap() {
-        for(int x = 0; x < mapData.length; x++) {
-            for(int y = 0; y < mapData[x].length;y++) {
-                mapGlobal[x][y] = LEGEND[mapData[x][y]];
+        for(int y = 0; y < mapData.length; y++) {
+            for(int x = 0; x < mapData[y].length;x++) {
+                mapGlobal[y][x] = LEGEND[mapData[y][x]];
             }
         }
 
