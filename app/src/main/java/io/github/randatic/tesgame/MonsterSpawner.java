@@ -72,6 +72,24 @@ public class MonsterSpawner extends Monster {
         allMon[26] = m;
         m.dSoul();
         allMon[27] = m;
+        m.serpent();
+        allMon[28] = m;
+        m.sprite();
+        allMon[29] = m;
+        m.drowned();
+        allMon[30] = m;
+        m.lSoul();
+        allMon[31] = m;
+        m.crab();
+        allMon[32] = m;
+        m.octopus();
+        allMon[33] = m;
+        m.shark();
+        allMon[34] = m;
+        m.bSoul();
+        allMon[35] = m;
+        m.kSoul();
+        allMon[36] = m;
     }
 
     public Monster spawn(int area){

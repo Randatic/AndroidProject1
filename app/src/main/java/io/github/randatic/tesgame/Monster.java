@@ -306,7 +306,7 @@ public class Monster {
         atk = 80;
         def = 10;
         spd = 40;
-        xp = 45;
+        xp = 70;
     }
 
     public void dSoul(){
@@ -318,6 +318,105 @@ public class Monster {
         def = 40;
         spd = 50;
         xp = 85;
+    }
+
+    public void serpent(){
+        name = "Serpent";
+        icon = 'S';
+        area = "Lake";
+        hp = 95;
+        atk = 70;
+        def = 60;
+        spd = 35;
+        xp = 65;
+    }
+
+    public void sprite(){
+        name = "Sprite";
+        icon = 'S';
+        area = "Lake";
+        hp = 75;
+        atk = 45;
+        def = 60;
+        spd = 20;
+        xp = 55;
+    }
+
+    public void drowned(){
+        name = "Drowned";
+        icon = 'D';
+        area = "Lake";
+        hp = 60;
+        atk = 40;
+        def = 60;
+        spd = 5;
+        xp = 30;
+    }
+
+    public void lSoul(){
+        name = "Lake Soul";
+        icon = 'L';
+        area = "Lake";
+        hp = 160;
+        atk = 70;
+        def = 30;
+        spd = 50;
+        xp = 45;
+    }
+
+    public void crab(){
+        name = "Crab";
+        icon = 'C';
+        area = "Beach";
+        hp = 65;
+        atk = 75;
+        def = 45;
+        spd = 20;
+        xp = 50;
+    }
+
+    public void octopus(){
+        name = "Octopus";
+        icon = 'O';
+        area = "Beach";
+        hp = 70;
+        atk = 55;
+        def = 45;
+        spd = 15;
+        xp = 50;
+    }
+
+    public void shark(){
+        name = "Shark";
+        icon = 'S';
+        area = "Beach";
+        hp = 55;
+        atk = 75;
+        def = 20;
+        spd = 45;
+        xp = 65;
+    }
+
+    public void bSoul(){
+        name = "Beach Soul";
+        icon = 'B';
+        area = "Beach";
+        hp = 175;
+        atk = 70;
+        def = 40;
+        spd = 55;
+        xp = 95;
+    }
+
+    public void kSoul(){
+        name = "King Soul";
+        icon = 'K';
+        area = "Soul Plane";
+        hp = 300;
+        atk = 80;
+        def = 70;
+        spd = 75;
+        xp = 250;
     }
 
     public void pure(){
