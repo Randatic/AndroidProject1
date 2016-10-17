@@ -5,6 +5,7 @@ package io.github.randatic.tesgame;
  */
 public class MonsterSpawner extends Monster {
     public Monster[] allMon = new Monster[37];
+    public Monster[] mtnMon, forestMon, desertMon, swampMon, plainsMon, graveMon, lakeMon, riverMon, beachMon = new Monster[4];
 
     public MonsterSpawner(){
         spawnArrayFiller();
@@ -12,6 +13,7 @@ public class MonsterSpawner extends Monster {
     }
 
     private void locMonArrayFill() {
+
     }
 
     private void spawnArrayFiller() {
