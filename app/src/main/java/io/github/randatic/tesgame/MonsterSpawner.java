@@ -6,11 +6,15 @@ package io.github.randatic.tesgame;
 public class MonsterSpawner extends Monster {
 
     public MonsterSpawner(){
+        Monster m = new Monster();
+        spawnArrayFiller();
+    }
 
+    private void spawnArrayFiller() {
     }
 
     public Monster spawn(int area){
-        Monster m = new Monster();
+
         if (area == 1) {
             m = spawnMtnMon();
         }
