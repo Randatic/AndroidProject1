@@ -4,19 +4,46 @@ package io.github.randatic.tesgame;
  * Created by Ellis on 10/11/2016.
  */
 public class MonsterSpawner extends Monster {
-
-    Monster m;
+    public Monster[] allMon = new Monster[37];
 
     public MonsterSpawner(){
-         m = new Monster();
         spawnArrayFiller();
+        locMonArrayFill();
+    }
+
+    private void locMonArrayFill() {
     }
 
     private void spawnArrayFiller() {
+        Monster m = new Monster();
+        m.deer();
+        allMon[0] = m;
+        m.slime();
+        allMon[1] = m;
+        m.wolf();
+        allMon[2] = m;
+        m.plainsSoul();
+        allMon[3] = m;
+        m.hag();
+        allMon[4] = m;
+        m.frog();
+        allMon[5] = m;
+        m.bogMonster();
+        allMon[6] = m;
+        m.swampSoul();
+        allMon[7] = m;
+        m.zombie();
+        allMon[8] = m;
+        m.gRat();
+        allMon[9] = m;
+        m.necro();
+        allMon[10] = m;
+        m.gysoul();
+        allMon[11] = m;
     }
 
     public Monster spawn(int area){
-
+        Monster m = new Monster();
         if (area == 1) {
             m = spawnMtnMon();
         }
@@ -45,7 +72,7 @@ public class MonsterSpawner extends Monster {
             m = spawnBeachMon();
         }
         else {
-            m.Null();
+           m.pure();
         }
         return m;
     }
