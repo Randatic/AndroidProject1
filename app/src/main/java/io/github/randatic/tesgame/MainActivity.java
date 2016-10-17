@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView tvMap;
     private Map map;
@@ -22,41 +22,51 @@ public class MainActivity extends AppCompatActivity {
         wirewidget();
         displayMap();
         displayEvent();
-        onclick();
     }
 
-    private void onclick()
+    public void displayMap() {
+        String display = "";
+        for(int y = 0; y < map.getMap().length; y++) {
+            for(int x = 0; x < map.getMap()[y].length; x++) {
+                display += map.getMap()[y][x];
+            }
+            display += "\n";
+        }
+
+        tvMap.setText(display);
+    }
+    @Override
+    public void onClick(View view)
     {
-        up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        left.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        right.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        action.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+        int number = 0;
+        if (view == up)
+        {
+            number = 0;
+            map.movePlayer(number);
+            map.updateMap();
+            displayMap();
+        }
+        else if (view == right)
+        {
+            number = 1;
+            map.movePlayer(number);
+            map.updateMap();
+            displayMap();
+        }
+        else if (view == down)
+        {
+            number = 2;
+            map.movePlayer(number);
+            map.updateMap();
+            displayMap();
+        }
+        else
+        {
+            number = 3;
+            map.movePlayer(number);
+            map.updateMap();
+            displayMap();
+        }
     }
 
     public void wirewidget()
@@ -75,22 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void displayMap() {
-        String display = "";
-        for(int y = 0; y < map.getMap().length; y++) {
-            for(int x = 0; x < map.getMap()[y].length; x++) {
-                display += map.getMap()[y][x];
-            }
-            display += "\n";
-        }
 
-        tvMap.setText(display);
-    }
+
 
 
     public void displayEvent()
     {
 
     }
+
 
 }

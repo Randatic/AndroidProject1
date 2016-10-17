@@ -21,6 +21,7 @@ public class Character {
         lvl = 1;
         pos = new Position(7, 7);
         inv = new Inventory();
+
     }
 
     private void levelUp() {
