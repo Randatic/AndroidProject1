@@ -1,9 +1,9 @@
 package io.github.randatic.tesgame;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,25 +14,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Map map;
     private Character character;
     private TextView eventShow;
-    private Button up, down, left, right, action;
+    private Button up, down, left, right, action, inventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        wireWidgets();
+        wirewidget();
         displayMap();
         displayEvent();
     }
 
     public void displayMap() {
-        SpannableStringBuilder display = new SpannableStringBuilder("");
+        String display = "";
         for(int y = 0; y < map.getMap().length; y++) {
             for(int x = 0; x < map.getMap()[y].length; x++) {
-                display.append(map.getMap()[y][x]);
+                display += map.getMap()[y][x];
             }
-            display.append("\n");
+            display += "\n";
         }
+
         tvMap.setText(display);
     }
 
@@ -43,24 +44,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.buttonUp)
         {
             map.movePlayer(Map.UP);
+            map.updateMap();
+            displayMap();
         }
         else if (view.getId() == R.id.buttonRight)
         {
             map.movePlayer(Map.RIGHT);
+            map.updateMap();
+            displayMap();
         }
         else if (view.getId() == R.id.buttonDown)
         {
             map.movePlayer(Map.DOWN);
+            map.updateMap();
+            displayMap();
         }
         else if (view.getId() == R.id.buttonLeft)
         {
             map.movePlayer(Map.LEFT);
+            map.updateMap();
+            displayMap();
         }
-        map.updateMap();
-        displayMap();
+        else if (view.getId() == R.id.buttonInventory)
+        {
+            Intent intent = new Intent();
+            startActivity(new Intent (MainActivity.this,ShowPopupWindowInventory.class));
+
+        }
     }
 
-    public void wireWidgets()
+    public void wirewidget()
     {
         character = new Character();
         map = new Map(character);
@@ -79,10 +92,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         down.setOnClickListener(this);
         right.setOnClickListener(this);
         left.setOnClickListener(this);
+        inventory.setOnClickListener(this);
     }
+
+
+
+
+
+
 
     public void displayEvent()
     {
 
     }
+
+
 }

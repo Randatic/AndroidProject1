@@ -61,11 +61,32 @@
             android:text="@string/right"
             android:id="@+id/buttonRight"/>
 
-        <Button
-            android:layout_width="68dp"
-            android:layout_height="wrap_content"
-            android:text="Action"
-            android:id="@+id/buttonAction" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Action"
+                    android:id="@+id/buttonAction" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Inventory"
+                    android:id="@+id/buttonInventory" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

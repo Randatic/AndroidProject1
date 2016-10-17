@@ -10,4 +10,7 @@
     <string name="up">Up</string>
     <string name="down">Down</string>
     <string name="point">point left: </string>
+    <string name= "Action">Action</string>
+    <string name= "Inventory">Inventory</string>
+    <string name="Money">Money:</string>
 </resources>
