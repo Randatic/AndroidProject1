@@ -12,8 +12,8 @@ public class Monster {
 
     }
 
-    public void Slime() {
-        name = "Slime";
+    public void slime() {
+        name = "slime";
         icon = 'S';
         area = "Plains";
         hp = 20;
@@ -23,7 +23,7 @@ public class Monster {
         xp = 10;
     }
 
-    public void Wolf() {
+    public void wolf() {
         name = "Wolf";
         icon = 'W';
         area = "Plains";
@@ -34,7 +34,7 @@ public class Monster {
         xp = 15;
     }
 
-    public void Deer() {
+    public void deer() {
         name = "Deer";
         icon = 'D';
         area = "Plains";
@@ -45,7 +45,7 @@ public class Monster {
         xp = 5;
     }
 
-    public void PlainsSoul(){
+    public void plainsSoul(){
         name = "Plain's Soul";
         icon = 'P';
         area = "Plains";
@@ -56,7 +56,7 @@ public class Monster {
         xp = 100;
     }
 
-    private void Hag(){
+    public void hag(){
         name = "Hag";
         icon = 'H';
         area = "Swamp";
@@ -67,7 +67,7 @@ public class Monster {
         xp = 45;
     }
 
-    private void Frog(){
+    public void frog(){
         name = "Frog";
         icon = 'F';
         area = "Swamp";
@@ -78,7 +78,7 @@ public class Monster {
         xp = 25;
     }
 
-    private void BogMonster(){
+    public void bogMonster(){
         name = "Bog Monster";
         icon = 'B';
         area = "Swamp";
@@ -89,7 +89,7 @@ public class Monster {
         xp = 45;
     }
 
-    private void SwampSoul(){
+    public void swampSoul(){
         name = "Swamp Soul";
         icon = 'S';
         area = "Swamp";
@@ -100,7 +100,7 @@ public class Monster {
         xp = 200;
     }
 
-    private void Zombie(){
+    public void zombie(){
         name = "Zombie";
         icon = 'Z';
         area = "Gyard";
@@ -111,7 +111,43 @@ public class Monster {
         xp = 50;
     }
 
-    public void Null(){
+    public void gRat(){
+        name = "Giant Rat";
+        icon = 'R';
+        area = "Gyard";
+        hp = 15;
+        atk = 20;
+        def = 20;
+        spd = 25;
+        xp = 60;
+    }
+
+    public void necro(){
+        name = "Necromancer";
+        icon = 'N';
+        area = "Gyard";
+        hp = 15;
+        atk = 40;
+        def = 30;
+        spd = 20;
+        xp = 70;
+    }
+
+    public void gysoul(){
+        name = "Graveyard Soul";
+        icon = 'S';
+        area = "Gyard";
+        hp = 100;
+        atk = 20;
+        def = 50;
+        spd = 45;
+        xp = 90;
+    }
+
+
+
+
+    public void pure(){
         name = "Null";
         icon = 'N';
         hp = Integer.MAX_VALUE;
@@ -119,6 +155,7 @@ public class Monster {
         def = Integer.MAX_VALUE;
         spd = Integer.MAX_VALUE;
         xp = Integer.MAX_VALUE;
+
     }
 
 }
