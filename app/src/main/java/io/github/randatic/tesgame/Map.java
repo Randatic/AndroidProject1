@@ -53,26 +53,24 @@ public class Map {
         if(direction==UP) {
             if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
                 player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
-                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
             }
         } else if(direction==RIGHT) {
             if(mapData[player.getPosition().getY()][player.getPosition().getX()+1]!=1) {
                 player.setPosition(player.getPosition().getX()+1, player.getPosition().getY());
-                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
             }
         } else if(direction==DOWN) {
             if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
                 player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
-                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
             }
         } else if(direction==LEFT) {
             if(mapData[player.getPosition().getY()][player.getPosition().getX()-1]!=1) {
                 player.setPosition(player.getPosition().getX()-1, player.getPosition().getY());
-                return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
             }
         }
 
+        updateMap();
         return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
+
     }
 
     public void addMonster(Monster m) {
@@ -85,6 +83,9 @@ public class Map {
             }
         }
 
+        for(Place p : places) {
+           mapGlobal[p.getPosition().getY()][p.getPosition().getY()] = p.getIcon();
+        }
         mapGlobal[player.getPosition().getY()][player.getPosition().getY()] = LEGEND[3];
     }
 

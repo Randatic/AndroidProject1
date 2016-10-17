@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Text\nMore Text"
+        android:text="0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14"
         android:id="@+id/textViewMap"
         android:textScaleX="1.5"
         android:textColor="#ffffff"
@@ -31,7 +31,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/left"/>
+            android:text="@string/left"
+            android:id="@+id/buttonLeft"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -42,19 +43,22 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/up"/>
+                android:text="@string/up"
+                android:id="@+id/buttonUp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/down" />
+                android:text="@string/down"
+                android:id="@+id/buttonDown"/>
 
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/right" />
+            android:text="@string/right"
+            android:id="@+id/buttonRight"/>
 
     </LinearLayout>
 

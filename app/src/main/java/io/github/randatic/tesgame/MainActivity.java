@@ -17,15 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        places = new Place[] {new Place(new Position(3, 6), "Hull House", "Settlement House", Assets.INN)};
+        places = new Place[] {};
         character = new Character();
+
         tvMap = (TextView) findViewById(R.id.textViewMap);
-        tvMap.setTypeface(Typeface.MONOSPACE);
+        tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
+
         map = new Map(places, character);
         displayMap();
-
-
-
     }
 
     public void displayMap() {
