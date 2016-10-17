@@ -144,8 +144,60 @@ public class Monster {
         xp = 90;
     }
 
+    public void elf(){
+        name = "Elf";
+        icon = 'E';
+        area = "Forest";
+        hp = 50;
+        atk = 30;
+        def = 20;
+        spd = 50;
+        xp = 35;
+    }
 
+    public void treant(){
+        name = "Treant";
+        icon = 'T';
+        area = "Forest";
+        hp = 60;
+        atk = 40;
+        def = 60;
+        spd = 15;
+        xp = 50;
+    }
 
+    public void spider(){
+        name = "Spider";
+        icon = 'S';
+        area = "Forest";
+        hp = 15;
+        atk = 30;
+        def = 20;
+        spd = 30;
+        xp = 15;
+    }
+
+    public void fSoul(){
+        name = "Forest Soul";
+        icon = 'S';
+        area = "Forest";
+        hp = 120;
+        atk = 50;
+        def = 75;
+        spd = 30;
+        xp = 90;
+    }
+
+    public void alligator(){
+        name = "Alligator";
+        icon = 'A';
+        area = "River";
+        hp = 25;
+        atk = 40;
+        def = 30;
+        spd = 20;
+        xp = 90;
+    }
 
     public void pure(){
         name = "Null";
