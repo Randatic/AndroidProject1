@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvMap;
     private Map map;
-    private Place[] places;
     private Character character;
     private TextView eventShow;
     private Button up, down, left, right, action;
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void wirewidget()
     {
-        places = new Place[] {};
         character = new Character();
         tvMap = (TextView) findViewById(R.id.textViewMap);
         up = (Button) findViewById(R.id.buttonUp);
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         action = (Button) findViewById(R.id.buttonAction);
         tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
         eventShow = (TextView) findViewById(R.id.textViewEvents);
-        map = new Map(places, character);
+        map = new Map(character);
     }
 
 

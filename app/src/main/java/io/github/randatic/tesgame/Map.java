@@ -19,12 +19,10 @@ public class Map {
     private Character player;
     private final static char[] LEGEND = Assets.ICONS;
 
-    private Place[] places;
-
     private int[][] mapData;
     private char[][] mapGlobal;
 
-    public Map(Place[] places, Character player) {
+    public Map(Character player) {
         mapData = new int[][] {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                 {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -43,7 +41,6 @@ public class Map {
         };
 
         this.player = player;
-        this.places = places;
         mapGlobal = new char[mapData.length][mapData[0].length];
         updateMap();
 
@@ -83,7 +80,7 @@ public class Map {
             }
         }
 
-        for(Place p : places) {
+        for(Place p : Assets.PLACES) {
            mapGlobal[p.getPosition().getY()][p.getPosition().getY()] = p.getIcon();
         }
         mapGlobal[player.getPosition().getY()][player.getPosition().getY()] = LEGEND[3];
