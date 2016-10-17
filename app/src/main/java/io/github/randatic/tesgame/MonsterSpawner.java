@@ -5,8 +5,10 @@ package io.github.randatic.tesgame;
  */
 public class MonsterSpawner extends Monster {
 
+    Monster m;
+
     public MonsterSpawner(){
-        Monster m = new Monster();
+         m = new Monster();
         spawnArrayFiller();
     }
 
