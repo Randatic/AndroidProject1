@@ -39,6 +39,7 @@ public class MonsterSpawner extends Monster {
         m.necro();
         allMon[10] = m;
         m.gysoul();
+        allMon[11] = m;
     }
 
     public Monster spawn(int area){
