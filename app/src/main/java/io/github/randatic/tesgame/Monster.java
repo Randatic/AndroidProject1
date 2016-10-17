@@ -243,6 +243,83 @@ public class Monster {
         xp = 60;
     }
 
+    public void dragon(){
+        name = "Dragon";
+        icon = 'D';
+        area = "Mountain";
+        hp = 90;
+        atk = 80;
+        def = 55;
+        spd = 30;
+        xp = 70;
+    }
+
+    public void golem(){
+        name = "Golem";
+        icon = 'G';
+        area = "Mountain";
+        hp = 100;
+        atk = 70;
+        def = 80;
+        spd = 10;
+        xp = 85;
+    }
+
+    public void mSoul(){
+        name = "Mountain Soul";
+        icon = 'M';
+        area = "Mountain";
+        hp = 100;
+        atk = 70;
+        def = 50;
+        spd = 45;
+        xp = 90;
+    }
+
+    public void scorpion(){
+        name = "Scorpion";
+        icon = 'S';
+        area = "Desert";
+        hp = 50;
+        atk = 60;
+        def = 50;
+        spd = 30;
+        xp = 45;
+    }
+
+    public void sphinx(){
+        name = "Sphinx";
+        icon = 'S';
+        area = "Desert";
+        hp = 90;
+        atk = 70;
+        def = 60;
+        spd = 20;
+        xp = 55;
+    }
+
+    public void antlion(){
+        name = "Antlion";
+        icon = 'A';
+        area = "Desert";
+        hp = 75;
+        atk = 80;
+        def = 10;
+        spd = 40;
+        xp = 45;
+    }
+
+    public void dSoul(){
+        name = "Desert Soul";
+        icon = 'D';
+        area = "Desert";
+        hp = 150;
+        atk = 80;
+        def = 40;
+        spd = 50;
+        xp = 85;
+    }
+
     public void pure(){
         name = "Null";
         icon = 'N';
