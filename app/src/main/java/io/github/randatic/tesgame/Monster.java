@@ -100,6 +100,17 @@ public class Monster {
         xp = 200;
     }
 
+    private void Zombie(){
+        name = "Zombie";
+        icon = 'Z';
+        area = "Gyard";
+        hp = 25;
+        atk = 30;
+        def = 15;
+        spd = 10;
+        xp = 50;
+    }
+
     public void Null(){
         name = "Null";
         icon = 'N';
