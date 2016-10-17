@@ -78,6 +78,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
         eventShow = (TextView) findViewById(R.id.textViewEvents);
         map = new Map(character);
+        up.setOnClickListener(this);
+        down.setOnClickListener(this);
+        right.setOnClickListener(this);
+        left.setOnClickListener(this);
     }
 
 
