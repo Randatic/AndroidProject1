@@ -69,15 +69,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void wirewidget()
     {
         character = new Character();
+        map = new Map(character);
+
         tvMap = (TextView) findViewById(R.id.textViewMap);
+        tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
+        eventShow = (TextView) findViewById(R.id.textViewEvents);
+
         up = (Button) findViewById(R.id.buttonUp);
         down = (Button) findViewById(R.id.buttonDown);
         left = (Button) findViewById(R.id.buttonLeft);
         right = (Button) findViewById(R.id.buttonRight);
         action = (Button) findViewById(R.id.buttonAction);
-        tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
-        eventShow = (TextView) findViewById(R.id.textViewEvents);
-        map = new Map(character);
+
         up.setOnClickListener(this);
         down.setOnClickListener(this);
         right.setOnClickListener(this);

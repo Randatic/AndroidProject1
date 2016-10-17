@@ -48,7 +48,7 @@ public class Character {
     public void setPosition(int X, int Y) {
         pos.setPosition(new int[]{X, Y});
     }
-        public void setHealth (int hp)
+    public void setHealth (int hp)
     {
         this.hp = hp;
     }

@@ -49,7 +49,7 @@ public class Map {
     public char movePlayer(int direction) {
         if(direction==UP) {
             if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
-                player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
+                player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
             }
         } else if(direction==RIGHT) {
             if(mapData[player.getPosition().getY()][player.getPosition().getX()+1]!=1) {
@@ -57,7 +57,7 @@ public class Map {
             }
         } else if(direction==DOWN) {
             if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
-                player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
+                player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
             }
         } else if(direction==LEFT) {
             if(mapData[player.getPosition().getY()][player.getPosition().getX()-1]!=1) {
