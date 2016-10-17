@@ -34,6 +34,7 @@ public class Character {
         spd = spd + 1;
     }
 
+    //what is going on
     //Setters
     public void setAttack(int atk){
         this.atk = atk;
