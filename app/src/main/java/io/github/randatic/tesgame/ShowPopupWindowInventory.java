@@ -10,8 +10,12 @@ public class ShowPopupWindowInventory extends Activity {
     protected void onCreate(Bundle savedinstancesState)
     {
         super.onCreate(savedinstancesState);
-        setContentView(R.layout);
+        setContentView(R.layout.showpopupwindowinventory);
 
 
+//TODO: make columns from layout appear as same number as inventory items
+        //TODO: make next button to change items
+        //TODO: button on the right makes item to use / equip
+        //TODO: if want, make back button to go back
     }
 }
