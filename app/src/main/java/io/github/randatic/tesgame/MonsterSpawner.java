@@ -146,34 +146,42 @@ public class MonsterSpawner extends Monster {
     }
 
     private Monster spawnRiverMon() {
-        return null;
+        Random r = new Random();
+        return riverMon.get(r.nextInt(3));
     }
 
     private Monster spawnLakeMon() {
-        return null;
+        Random r = new Random();
+        return lakeMon.get(r.nextInt(3));
     }
 
     private Monster spawnGraveMon() {
-        return null;
+        Random r = new Random();
+        return gyMon.get(r.nextInt(3));
     }
 
     private Monster spawnPlainMon() {
-        return null;
+        Random r = new Random();
+        return plainsMon.get(r.nextInt(3));
     }
 
     private Monster SpawnSwampMon() {
-        return null;
+        Random r = new Random();
+        return swampMon.get(r.nextInt(3));
     }
 
     private Monster spawnDesertMon() {
-        return null;
+        Random r = new Random();
+        return desertMon.get(r.nextInt(3));
     }
 
     private Monster spawnForestMon() {
-        return null;
+        Random r = new Random();
+        return lakeMon.get(r.nextInt(3));
     }
 
     private Monster spawnMtnMon() {
-        return null;
+        Random r = new Random();
+        return mtnMon.get(r.nextInt(3));
     }
 }
