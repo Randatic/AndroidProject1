@@ -24,11 +24,16 @@ public class Assets {
     public final static char INN = 'I';             //5
     public final static char MERCHANT = '$';        //6
 
-    //Objects
+    //Places
     public final static Place HULL_HOUSE = new Place(new Position(3, 3), "Hull House", "Settlement House", INN);
     public final static Place CHARLIES_INN = new Place(new Position(10, 6), "Charlie\'s Inn", "A small traveler's inn.", INN);
     public final static Place BURNING_FURNACE = new Place(new Position(5, 11), "The Burning Furnace", "Weapons and Tools Shop", MERCHANT);
 
+    //Food
+
+    //Weapons
+    public final static Weapon SWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
+    public final static Weapon MATCHETTE = new Weapon("Matchette", "A worn matchette.", 3);
 
     //Arrays
     public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
