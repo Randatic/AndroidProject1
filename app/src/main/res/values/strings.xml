@@ -14,4 +14,5 @@
     <string name= "Inventory">Inventory</string>
     <string name="Money">Money:</string>
     <string name="Item">item</string>
+    <string name="Next">next</string>
 </resources>
