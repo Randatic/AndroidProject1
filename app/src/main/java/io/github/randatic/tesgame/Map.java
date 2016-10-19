@@ -16,7 +16,6 @@ public class Map {
     private final static char NOTHING = '.';
 
     //Variables
-    private Character player;
     private final static char[] LEGEND = Assets.ICONS;
 
     private int[][] mapData;
@@ -40,15 +39,14 @@ public class Map {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
         };
 
-        this.player = player;
         mapGlobal = new char[mapData.length][mapData[0].length];
-        updateMap();
+        updateMap(player);
 
     }
 
-    public char movePlayer(int direction) {
+    public char movePlayer(int direction, Character player) {
         if(direction==UP) {
-            if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
+            if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
                 player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
             }
         } else if(direction==RIGHT) {
@@ -56,7 +54,7 @@ public class Map {
                 player.setPosition(player.getPosition().getX()+1, player.getPosition().getY());
             }
         } else if(direction==DOWN) {
-            if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
+            if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
                 player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
             }
         } else if(direction==LEFT) {
@@ -65,7 +63,7 @@ public class Map {
             }
         }
 
-        updateMap();
+        updateMap(player);
         return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
 
     }
@@ -73,7 +71,7 @@ public class Map {
     public void addMonster(Monster m) {
 
     }
-    public void updateMap() {
+    public void updateMap(Character player) {
         for(int y = 0; y < mapData.length; y++) {
             for(int x = 0; x < mapData[y].length;x++) {
                 mapGlobal[y][x] = LEGEND[mapData[y][x]];

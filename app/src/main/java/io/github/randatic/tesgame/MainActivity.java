@@ -10,22 +10,21 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView tvMap;
-    private Map map;
-    private Character character;
-    private TextView eventShow;
+    private TextView tvMap, tvEvents;
+    private Game game;
     private Button up, down, left, right, action, inventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         wirewidget();
-        displayMap();
-        displayEvent();
+        displayMap(game.getMap());
+        displayEvent(game.getEventString());
     }
 
-    public void displayMap() {
+    public void displayMap(Map map) {
         String display = "";
         for(int y = 0; y < map.getMap().length; y++) {
             for(int x = 0; x < map.getMap()[y].length; x++) {
@@ -37,33 +36,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvMap.setText(display);
     }
 
+    public void displayEvent(String events)
+    {
+        tvEvents.setText(events);
+    }
+
     @Override
     public void onClick(View view)
     {
 
         if (view.getId() == R.id.buttonUp)
         {
-            map.movePlayer(Map.UP);
-            map.updateMap();
-            displayMap();
+            game.getMap().movePlayer(Map.UP, game.getPlayer());
+            displayMap(game.getMap());
         }
         else if (view.getId() == R.id.buttonRight)
         {
-            map.movePlayer(Map.RIGHT);
-            map.updateMap();
-            displayMap();
+            game.getMap().movePlayer(Map.RIGHT, game.getPlayer());
+            displayMap(game.getMap());
         }
         else if (view.getId() == R.id.buttonDown)
         {
-            map.movePlayer(Map.DOWN);
-            map.updateMap();
-            displayMap();
+            game.getMap().movePlayer(Map.DOWN, game.getPlayer());
+            displayMap(game.getMap());
         }
         else if (view.getId() == R.id.buttonLeft)
         {
-            map.movePlayer(Map.LEFT);
-            map.updateMap();
-            displayMap();
+            game.getMap().movePlayer(Map.LEFT, game.getPlayer());
+            displayMap(game.getMap());
         }
 
         else if (view.getId() == R.id.buttonInventory)
@@ -77,12 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void wirewidget()
     {
-        character = new Character();
-        map = new Map(character);
+        game = new Game();
 
         tvMap = (TextView) findViewById(R.id.textViewMap);
         tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
-        eventShow = (TextView) findViewById(R.id.textViewEvents);
+        tvEvents = (TextView) findViewById(R.id.textViewEvents);
 
         up = (Button) findViewById(R.id.buttonUp);
         down = (Button) findViewById(R.id.buttonDown);
@@ -97,17 +96,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left.setOnClickListener(this);
         inventory.setOnClickListener(this);
     }
-
-
-
-
-
-
-
-    public void displayEvent()
-    {
-
-    }
-
-
 }
