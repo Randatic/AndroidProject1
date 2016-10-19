@@ -1,11 +1,13 @@
 package io.github.randatic.tesgame;
 
+import java.util.ArrayList;
+
 /**
  * Created by Ellis on 10/11/2016.
  */
 public class MonsterSpawner extends Monster {
     public Monster[] allMon = new Monster[37];
-    public Monster[] mtnMon, forestMon, desertMon, swampMon, plainsMon, graveMon, lakeMon, riverMon, beachMon = new Monster[4];
+    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon = new ArrayList<>(4);
 
     public MonsterSpawner(){
         spawnArrayFiller();
@@ -13,7 +15,35 @@ public class MonsterSpawner extends Monster {
     }
 
     private void locMonArrayFill() {
-
+        for(int i = 0; i > allMon.length-1; i++){
+            if (allMon[i].getArea().equals("Mountain")){
+                mtnMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Forest")){
+                forestMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Desert")){
+                desertMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Swamp")){
+                swampMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Plains")){
+                plainsMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Gyard")){
+                gyMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Lake")){
+                lakeMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("River")){
+                riverMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Beach")){
+                beachMon.add(allMon[i]);
+            }
+        }
     }
 
     private void spawnArrayFiller() {
