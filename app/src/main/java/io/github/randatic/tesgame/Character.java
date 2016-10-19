@@ -83,5 +83,7 @@ public class Character {
         return pos.getPosition();
     }
     public String getName() {return name;}
+    public int getItemNumber() {return inv.getItemNumber();}
+    public Inventory getInv() {return inv;}
 }
 
