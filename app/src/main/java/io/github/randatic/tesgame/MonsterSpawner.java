@@ -1,13 +1,14 @@
 package io.github.randatic.tesgame;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Ellis on 10/11/2016.
  */
 public class MonsterSpawner extends Monster {
-    public Monster[] allMon = new Monster[37];
-    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon = new ArrayList<>(4);
+    public Monster[] allMon = new Monster[27];
+    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon = new ArrayList<>(3);
 
     public MonsterSpawner(){
         spawnArrayFiller();
@@ -54,74 +55,54 @@ public class MonsterSpawner extends Monster {
         allMon[1] = m;
         m.wolf();
         allMon[2] = m;
-        m.plainsSoul();
-        allMon[3] = m;
         m.hag();
-        allMon[4] = m;
+        allMon[3] = m;
         m.frog();
-        allMon[5] = m;
+        allMon[4] = m;
         m.bogMonster();
-        allMon[6] = m;
-        m.swampSoul();
-        allMon[7] = m;
+        allMon[5] = m;
         m.zombie();
-        allMon[8] = m;
+        allMon[6] = m;
         m.gRat();
-        allMon[9] = m;
+        allMon[7] = m;
         m.necro();
-        allMon[10] = m;
-        m.gysoul();
-        allMon[11] = m;
+        allMon[8] = m;
         m.elf();
-        allMon[12] = m;
+        allMon[9] = m;
         m.treant();
-        allMon[13] = m;
+        allMon[10] = m;
         m.spider();
-        allMon[14] = m;
-        m.fSoul();
-        allMon[15] = m;
+        allMon[11] = m;
         m.alligator();
-        allMon[16] = m;
+        allMon[12] = m;
         m.crane();
-        allMon[17] = m;
+        allMon[13] = m;
         m.hippo();
-        allMon[18] = m;
-        m.rSoul();
-        allMon[19] = m;
+        allMon[14] = m;
         m.giant();
-        allMon[20] = m;
+        allMon[15] = m;
         m.dragon();
-        allMon[21] = m;
+        allMon[16] = m;
         m.golem();
-        allMon[22] = m;
-        m.mSoul();
-        allMon[23] = m;
+        allMon[17] = m;
         m.scorpion();
-        allMon[24] = m;
+        allMon[18] = m;
         m.sphinx();
-        allMon[25] = m;
+        allMon[19] = m;
         m.antlion();
-        allMon[26] = m;
-        m.dSoul();
-        allMon[27] = m;
+        allMon[20] = m;
         m.serpent();
-        allMon[28] = m;
+        allMon[21] = m;
         m.sprite();
-        allMon[29] = m;
+        allMon[22] = m;
         m.drowned();
-        allMon[30] = m;
-        m.lSoul();
-        allMon[31] = m;
+        allMon[23] = m;
         m.crab();
-        allMon[32] = m;
+        allMon[24] = m;
         m.octopus();
-        allMon[33] = m;
+        allMon[25] = m;
         m.shark();
-        allMon[34] = m;
-        m.bSoul();
-        allMon[35] = m;
-        m.kSoul();
-        allMon[36] = m;
+        allMon[26] = m;
     }
 
     public Monster spawn(int area){
@@ -160,7 +141,8 @@ public class MonsterSpawner extends Monster {
     }
 
     private Monster spawnBeachMon() {
-        return null;
+        Random r = new Random();
+        return beachMon.get(r.nextInt(3));
     }
 
     private Monster spawnRiverMon() {
