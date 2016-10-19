@@ -65,12 +65,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             map.updateMap();
             displayMap();
         }
+
         else if (view.getId() == R.id.buttonInventory)
         {
-            Intent intent = new Intent();
-            startActivity(new Intent (MainActivity.this,ShowPopupWindowInventory.class));
+
+            startActivity(new Intent(MainActivity.this,ShowPopupWindowInventory.class));
 
         }
+
     }
 
     public void wirewidget()
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left = (Button) findViewById(R.id.buttonLeft);
         right = (Button) findViewById(R.id.buttonRight);
         action = (Button) findViewById(R.id.buttonAction);
+        inventory = (Button) findViewById(R.id.buttonInventory);
 
         up.setOnClickListener(this);
         down.setOnClickListener(this);

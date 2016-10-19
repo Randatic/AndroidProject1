@@ -430,4 +430,7 @@ public class Monster {
 
     }
 
+    public String getArea() {
+        return area;
+    }
 }

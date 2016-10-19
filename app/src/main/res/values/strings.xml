@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TesGAme</string>
+    <string name="app_name">TesGame</string>
     <string name="your_character">Your Character:</string>
     <string name="attack">Attack:</string>
     <string name="_10">10</string>
@@ -13,4 +13,6 @@
     <string name= "Action">Action</string>
     <string name= "Inventory">Inventory</string>
     <string name="Money">Money:</string>
+    <string name="Item">item</string>
+    <string name="Next">next</string>
 </resources>
