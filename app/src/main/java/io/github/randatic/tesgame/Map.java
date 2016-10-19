@@ -46,7 +46,7 @@ public class Map {
 
     public char movePlayer(int direction, Character player) {
         if(direction==UP) {
-            if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
+            if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
                 player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
             }
         } else if(direction==RIGHT) {
@@ -54,7 +54,7 @@ public class Map {
                 player.setPosition(player.getPosition().getX()+1, player.getPosition().getY());
             }
         } else if(direction==DOWN) {
-            if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
+            if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
                 player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
             }
         } else if(direction==LEFT) {

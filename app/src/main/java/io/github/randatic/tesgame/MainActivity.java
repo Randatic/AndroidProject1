@@ -10,9 +10,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView tvMap;
+    private TextView tvMap, tvEvents;
     private Game game;
-    private TextView eventShow;
     private Button up, down, left, right, action, inventory;
 
     @Override
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         wirewidget();
         displayMap(game.getMap());
-        displayEvent();
+        displayEvent(game.getEventString());
     }
 
     public void displayMap(Map map) {
@@ -35,6 +34,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         tvMap.setText(display);
+    }
+
+    public void displayEvent(String events)
+    {
+        tvEvents.setText(events);
     }
 
     @Override
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tvMap = (TextView) findViewById(R.id.textViewMap);
         tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
-        eventShow = (TextView) findViewById(R.id.textViewEvents);
+        tvEvents = (TextView) findViewById(R.id.textViewEvents);
 
         up = (Button) findViewById(R.id.buttonUp);
         down = (Button) findViewById(R.id.buttonDown);
@@ -92,17 +96,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         left.setOnClickListener(this);
         inventory.setOnClickListener(this);
     }
-
-
-
-
-
-
-
-    public void displayEvent()
-    {
-
-    }
-
-
 }

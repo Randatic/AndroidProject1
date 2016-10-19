@@ -6,10 +6,19 @@ package io.github.randatic.tesgame;
 public class Game {
     private Map map;
     private Character player;
+    private String[] events;
 
     public Game () {
+        events = new String[] {"Welcome to Souls!", "Have fun!", "Don\'t die!", "Testing", "Last line"};
         player = new Character();
         map = new Map(player);
+    }
+
+    public void addEvent(String e) {
+        for(int i = 0;i < events.length-1; i++) {
+            events[i] = events[i+1];
+        }
+        events[events.length-1] = e;
     }
 
     public Character getPlayer() {
@@ -18,5 +27,14 @@ public class Game {
     public Map getMap() {
         return map;
     }
+    public String getEventString() {
+        String eventString = "";
+
+        for (String e : events) {
+            eventString += e + "\n";
+        }
+        return eventString;
+    }
+
 
 }
