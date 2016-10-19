@@ -1,5 +1,6 @@
 package io.github.randatic.tesgame;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Map map;
     private Character character;
     private TextView eventShow;
-    private Button up, down, left, right, action;
+    private Button up, down, left, right, action, inventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             map.updateMap();
             displayMap();
         }
+        else if (view.getId() == R.id.buttonInventory)
+        {
+            Intent intent = new Intent();
+            startActivity(new Intent (MainActivity.this,ShowPopupWindowInventory.class));
+
+        }
     }
 
     public void wirewidget()
@@ -85,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         down.setOnClickListener(this);
         right.setOnClickListener(this);
         left.setOnClickListener(this);
+        inventory.setOnClickListener(this);
     }
 
 
