@@ -33,7 +33,7 @@ public class Assets {
 
     //Weapons
     public final static Weapon SWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
-    public final static Weapon MATCHETTE = new Weapon("Matchette", "A worn matchette.", 3);
+    public final static Weapon MATCHETE = new Weapon("Machete", "A worn machete.", 3);
 
     //Arrays
     public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
