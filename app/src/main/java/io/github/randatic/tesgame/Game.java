@@ -21,6 +21,11 @@ public class Game {
         events[events.length-1] = e;
     }
 
+    public void movePlayer(int direction) {
+        map.movePlayer(direction, player);
+    }
+
+
     public Character getPlayer() {
         return player;
     }
