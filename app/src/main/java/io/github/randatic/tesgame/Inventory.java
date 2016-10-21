@@ -13,7 +13,7 @@ public class Inventory {
         inventory = new ArrayList<Item>();
     }
 
-    public int getItemNumber() {return inventory.size();}
+    public int getInventorySize() {return inventory.size();}
 
     public void addItem(Item i) {
         inventory.add(i);
@@ -33,7 +33,7 @@ public class Inventory {
 
         else
         {
-            character.setAttack(character.getAttack() + i.getValue());
+            character.setPrimaryWeapon(i);
             inventory.remove(i);
         }
 
