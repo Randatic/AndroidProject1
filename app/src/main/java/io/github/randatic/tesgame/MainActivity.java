@@ -68,9 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         else if (view.getId() == R.id.buttonInventory)
         {
-
             startActivity(new Intent(MainActivity.this,ShowPopupWindowInventory.class));
-
+        }
+        else if (view.getId() == R.id.buttonAction)
+        {
+            game.Action();
         }
 
     }

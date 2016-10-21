@@ -41,5 +41,8 @@ public class Game {
         return eventString;
     }
 
+    public void Action() {
+
+    }
 
 }
