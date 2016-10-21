@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by csaper6 on 10/17/16.
@@ -87,7 +86,7 @@ public class ShowPopupWindowInventory extends Activity implements View.OnClickLi
     {
         if (view.getId() == R.id.button1)
         {
-            Toast.makeText(ShowPopupWindowInventory.this, character.getWeapon().getItemName(), Toast.LENGTH_SHORT).show();
+            character.getInv().useItem(character.getInv().getItem(1));
         }
         else if (view.getId() == R.id.button2)
         {
