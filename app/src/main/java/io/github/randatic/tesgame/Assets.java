@@ -32,7 +32,8 @@ public class Assets {
     //Food
 
     //Weapons
-    public final static Weapon SWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
+    public final static Weapon BSWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
+    public final static Weapon SSWORD = new Weapon("Steal Sword", "A sharp sword, made to steel.", 10);
     public final static Weapon MATCHETE = new Weapon("Machete", "A worn machete.", 3);
 
     //Arrays
