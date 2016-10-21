@@ -11,12 +11,17 @@ import android.widget.TextView;
  */
 public class ShopActivity extends AppCompatActivity implements View.OnClickListener {
     private Button item1, item2, item3;
-    private TextView
+    private TextView price1, price2, price3, money;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+
+        wireWidgets();
+    }
+
+    private void wireWidgets() {
 
     }
 

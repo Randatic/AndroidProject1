@@ -25,14 +25,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/item_1"
+            android:text="Item 1"
             android:id="@+id/button_item1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/price1"
+            android:text="Price 1"
             android:id="@+id/textView_price1" />
     </LinearLayout>
 
@@ -44,14 +44,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/item_2"
+            android:text="Item 2"
             android:id="@+id/button_item2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/price2"
+            android:text="Price 2"
             android:id="@+id/textView_price2" />
     </LinearLayout>
 
@@ -64,22 +64,35 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
-            android:text="@string/item_3"
+            android:text="Item 3"
             android:id="@+id/button_item3" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/price3"
+            android:text="Price 3"
             android:id="@+id/textView_price3" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/money"
-        android:id="@+id/textView_money" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Money"
+            android:id="@+id/textView_money" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Cash"
+            android:id="@+id/textView_cash" />
+    </LinearLayout>
 
 </LinearLayout>
