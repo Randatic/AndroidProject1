@@ -22,7 +22,7 @@ public class Character {
         lvl = 1;
         pos = new Position(7, 7);
         inv = new Inventory();
-        inv.addItem(Assets.SWORD);
+        inv.addItem(Assets.BLKSWORD);
         weapon = inv.getItem(0);
 
     }
