@@ -7,6 +7,7 @@ public class Character {
 
     private int hp, atk, def, spd, xp, maxXp, lvl;
     private String name;
+    private Item weapon;
 
     private Inventory inv;
     private Position pos;
@@ -21,6 +22,8 @@ public class Character {
         lvl = 1;
         pos = new Position(7, 7);
         inv = new Inventory();
+        inv.addItem(Assets.SWORD);
+        weapon = inv.getItem(0);
 
     }
 
@@ -39,6 +42,7 @@ public class Character {
     public void setAttack(int atk){
         this.atk = atk;
     }
+    public void setPrimaryWeapon (Item item) {weapon = item;}
     public void setDefence(int def){
         this.def = def;
     }
@@ -83,7 +87,8 @@ public class Character {
         return pos.getPosition();
     }
     public String getName() {return name;}
-    public int getItemNumber() {return inv.getItemNumber();}
     public Inventory getInv() {return inv;}
+    public Item getWeapon () {return weapon;}
+
 }
 
