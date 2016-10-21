@@ -16,4 +16,7 @@ public class Wallet extends Item {
     public void addMoney(int deposit) {
         super.addToValue(deposit);
     }
+    public void subMoney(int remove) {
+        super.subFromValue(remove);
+    }
 }

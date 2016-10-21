@@ -32,8 +32,12 @@ public class Assets {
     //Food
 
     //Weapons
-    public final static Weapon SWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
+    public final static Weapon BSWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
+    public final static Weapon SSWORD = new Weapon("Steal Sword", "A sharp sword, made to steel.", 10);
     public final static Weapon MATCHETE = new Weapon("Machete", "A worn machete.", 3);
+    public final static Weapon BLKSWORD = new Weapon("Black Sword", "A matte black sword", 15);
+    public final static Weapon WHTSWORD = new Weapon("White Sword", "A unnaturally white sword", 20);
+    public final static Weapon GUTSWORD = new Weapon("Guitar Sword", "A sword which is a guitar", 7);
 
     //Arrays
     public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
