@@ -15,4 +15,12 @@
     <string name="Money">Money:</string>
     <string name="Item">item</string>
     <string name="Next">next</string>
+    <string name="shop">Shop</string>
+    <string name="item_1">Item 1</string>
+    <string name="item_2">Item 2</string>
+    <string name="item_3">Item 3</string>
+    <string name="price1">Price1</string>
+    <string name="price2">Price2</string>
+    <string name="price3">Price3</string>
+    <string name="money">Money</string>
 </resources>

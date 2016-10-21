@@ -15,4 +15,8 @@ public class Weapon extends Item{
         return super.getValue();
     }
 
+    public int getPrice(){
+        return super.getValue()*10;
+    }
+
 }

@@ -39,4 +39,7 @@ public abstract class Item {
     public void addToValue(int n) {
         value += n;
     }
+    public void subFromValue(int n){
+        value += n;
+    }
 }
