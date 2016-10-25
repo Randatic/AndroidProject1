@@ -31,6 +31,11 @@ public class Assets {
 
     //Food
 
+    public final static Food APPLE = new Food("Apple", "An Apple", 10);
+    public final static Food PORTION = new Food("Portion", "Portion", 30);
+    public final static Food Large_PORTION = new Food("Large Potion", "Large Potion", 100);
+    public final static Food FULL_HEALTH = new Food("Full Health", "Health potion that recovers all health", 100);
+
     //Weapons
     public final static Weapon BSWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
     public final static Weapon SSWORD = new Weapon("Steal Sword", "A sharp sword, made to steel.", 10);
