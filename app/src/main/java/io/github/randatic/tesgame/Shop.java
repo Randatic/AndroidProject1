@@ -24,7 +24,7 @@ public class Shop extends Assets {
         weaponList.add(SHADESWORD);
     }
 
-    private ArrayList getItems(){
+    public ArrayList getItems(){
         Random r = new Random();
         for (int i = 0; i > 3; i++)
         {

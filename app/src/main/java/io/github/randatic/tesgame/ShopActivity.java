@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Ellis on 10/21/2016.
  */
@@ -19,10 +21,10 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_shop);
         Shop s = new Shop();
         wireWidgets();
-        stockShop();
+        stockShop(s.getItems());
     }
 
-    private void stockShop() {
+    private void stockShop(ArrayList a) {
     }
 
     private void wireWidgets() {
