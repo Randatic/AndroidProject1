@@ -23,21 +23,16 @@ public class Inventory {
         return inventory.get(index);
     }
 
-    public void useItem(Item i)
+    public Item useItem(int i)
     {
-        if (i.getItemDescription() == "Food")
-        {
-            character.setHealth(character.getHp() + i.getValue());
-            inventory.remove(i);
-        }
+        if (inventory.get(i).getClass()==Weapon.class) {
+            return inventory.remove(i);
+        } else if (inventory.get(i).getClass()==Food.class) {
 
-        else
-        {
-            character.setPrimaryWeapon(i);
-            inventory.remove(i);
         }
-
+        return null;
     }
+
     public int hasItem(Item i) {
         for (Item e: inventory) {
 

@@ -34,14 +34,23 @@ public class ShowPopupWindowInventory extends Activity implements View.OnClickLi
         int height = dm.heightPixels;
         getWindow().setLayout((int) (width * .91), (int)(height * .6));
         wirewidget();
+
         character = new Character();
+
         LinearLayout[] layout = new LinearLayout[] {layout1, layout2, layout3, layout4, layout5, layout6, layout7};
         TextView[] text = new TextView[] {text1, text2, text3, text4, text5, text6, text7};
+        Button[] buttons = new Button[] {button1, button2, button3, button4, button5, button6, button7};
+
+
         for (int i = 0; i < character.getInv().getInventorySize(); i++)
         {
             layout[i].setVisibility(View.VISIBLE);
             text[i].setText("" + character.getInv().getItem(i));
-
+            if(character.getInv().getItem(i).getClass()==Weapon.class) {
+                buttons[i].setText("Set As Primary Weapon");
+            } else if(character.getInv().getItem(i).getClass()==Food.class) {
+                buttons[i].setText("Eat");
+            }
         }
 
 
@@ -86,31 +95,31 @@ public class ShowPopupWindowInventory extends Activity implements View.OnClickLi
     {
         if (view.getId() == R.id.button1)
         {
-            character.getInv().useItem(character.getInv().getItem(1));
+            character.getInv().useItem(0);
         }
         else if (view.getId() == R.id.button2)
         {
-            character.getInv().useItem(character.getInv().getItem(1));
+            character.getInv().useItem(1);
         }
         else if (view.getId() == R.id.button3)
         {
-            character.getInv().useItem(character.getInv().getItem(2));
+            character.getInv().useItem(2);
         }
         else if (view.getId() == R.id.button4)
         {
-            character.getInv().useItem(character.getInv().getItem(3));
+            character.getInv().useItem(3);
         }
         else if (view.getId() == R.id.button5)
         {
-            character.getInv().useItem(character.getInv().getItem(4));
+            character.getInv().useItem(4);
         }
         else if (view.getId() == R.id.button6)
         {
-            character.getInv().useItem(character.getInv().getItem(5));
+            character.getInv().useItem(5);
         }
         else if (view.getId() == R.id.button7)
         {
-            character.getInv().useItem(character.getInv().getItem(6));
+            character.getInv().useItem(6);
         }
     }
 }
