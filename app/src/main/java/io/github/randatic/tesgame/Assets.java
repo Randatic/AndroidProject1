@@ -38,6 +38,8 @@ public class Assets {
     public final static Weapon BLKSWORD = new Weapon("Black Sword", "A matte black sword", 15);
     public final static Weapon WHTSWORD = new Weapon("White Sword", "A unnaturally white sword", 20);
     public final static Weapon GUTSWORD = new Weapon("Guitar Sword", "A sword which is a guitar", 7);
+    public final static Weapon NOVASWORD = new Weapon("Nova Sword", "A sword heated to the temperature of a Nova", 30);
+    public final static Weapon SHADESWORD = new Weapon("Shade Sword", "A sword sword made from shadow", 35);
 
     //Arrays
     public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};

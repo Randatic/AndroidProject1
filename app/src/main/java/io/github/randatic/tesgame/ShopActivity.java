@@ -17,8 +17,12 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-
+        Shop s = new Shop();
         wireWidgets();
+        stockShop();
+    }
+
+    private void stockShop() {
     }
 
     private void wireWidgets() {
