@@ -17,6 +17,9 @@ public class ShowPopupWindowInventory extends Activity implements View.OnClickLi
     private Button button1, button2, button3, button4, button5, button6, button7;
     private TextView text1, text2, text3, text4, text5, text6, text7;
     public Character character;
+    private LinearLayout[] layout;
+    private TextView[] text;
+    private Button[] buttons;
 
 
 
@@ -37,29 +40,16 @@ public class ShowPopupWindowInventory extends Activity implements View.OnClickLi
 
         character = new Character();
 
-        LinearLayout[] layout = new LinearLayout[] {layout1, layout2, layout3, layout4, layout5, layout6, layout7};
-        TextView[] text = new TextView[] {text1, text2, text3, text4, text5, text6, text7};
-        Button[] buttons = new Button[] {button1, button2, button3, button4, button5, button6, button7};
+        layout = new LinearLayout[] {layout1, layout2, layout3, layout4, layout5, layout6, layout7};
+        text = new TextView[] {text1, text2, text3, text4, text5, text6, text7};
+        buttons = new Button[] {button1, button2, button3, button4, button5, button6, button7};
+
+        character.getInv().addItem(Assets.BSWORD);
+        character.getInv().addItem(Assets.BSWORD);
+        character.getInv().addItem(Assets.BSWORD);
+        checkItems(character.getInv().getInventorySize());
 
 
-        for (int i = 0; i < character.getInv().getInventorySize(); i++)
-        {
-            layout[i].setVisibility(View.VISIBLE);
-            text[i].setText("" + character.getInv().getItem(i));
-            if(character.getInv().getItem(i).getClass()==Weapon.class) {
-                buttons[i].setText("Set As Primary Weapon");
-            } else if(character.getInv().getItem(i).getClass()==Food.class) {
-                buttons[i].setText("Eat");
-            }
-        }
-
-
-
-
-//TODO: make columns from layout appear as same number as inventory items
-        //TODO: make next button to change items
-        //TODO: button on the right makes item to use / equip
-        //TODO: if want, make back button to go back
     }
 
     private void wirewidget() {
@@ -96,30 +86,55 @@ public class ShowPopupWindowInventory extends Activity implements View.OnClickLi
         if (view.getId() == R.id.button1)
         {
             character.getInv().useItem(0);
+            checkItems(character.getInv().getInventorySize());
         }
         else if (view.getId() == R.id.button2)
         {
             character.getInv().useItem(1);
+            checkItems(character.getInv().getInventorySize());
         }
         else if (view.getId() == R.id.button3)
         {
             character.getInv().useItem(2);
+            checkItems(character.getInv().getInventorySize());
         }
         else if (view.getId() == R.id.button4)
         {
             character.getInv().useItem(3);
+            checkItems(character.getInv().getInventorySize());
         }
         else if (view.getId() == R.id.button5)
         {
             character.getInv().useItem(4);
+            checkItems(character.getInv().getInventorySize());
         }
         else if (view.getId() == R.id.button6)
         {
             character.getInv().useItem(5);
+            checkItems(character.getInv().getInventorySize());
         }
         else if (view.getId() == R.id.button7)
         {
             character.getInv().useItem(6);
+            checkItems(character.getInv().getInventorySize());
+        }
+    }
+
+    public void checkItems(int number)
+    {
+        if (number == 0) {
+
+        }
+        else {
+            for (int i = 0; i < character.getInv().getInventorySize(); i++) {
+                layout[i].setVisibility(View.VISIBLE);
+                text[i].setText("" + character.getInv().getItem(i));
+                if (character.getInv().getItem(i).getClass() == Weapon.class) {
+                    buttons[i].setText("Set As Primary Weapon");
+                } else if (character.getInv().getItem(i).getClass() == Food.class) {
+                    buttons[i].setText("Eat");
+                }
+            }
         }
     }
 }
