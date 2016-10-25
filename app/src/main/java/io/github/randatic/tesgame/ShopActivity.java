@@ -22,7 +22,13 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void wireWidgets() {
-
+        item1 = (Button) findViewById(R.id.button_item1);
+        item2 = (Button) findViewById(R.id.button_item2);
+        item3 = (Button) findViewById(R.id.button_item3);
+        price1 = (TextView) findViewById(R.id.textView_price1);
+        price2 = (TextView) findViewById(R.id.textView_price2);
+        price3 = (TextView) findViewById(R.id.textView_price3);
+        money = (TextView) findViewById(R.id.textView_cash);
     }
 
     @Override
