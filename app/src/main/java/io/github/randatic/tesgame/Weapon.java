@@ -19,4 +19,8 @@ public class Weapon extends Item{
         return super.getValue()*10;
     }
 
+    public String getName(){
+        return super.getItemName();
+    }
+
 }

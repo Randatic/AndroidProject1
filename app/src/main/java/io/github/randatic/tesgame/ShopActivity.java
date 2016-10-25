@@ -24,7 +24,13 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
         stockShop(s.getItems());
     }
 
-    private void stockShop(ArrayList a) {
+    private void stockShop(ArrayList<Weapon> a) {
+        item1.setText(a.get(0).getName());
+        item2.setText(a.get(1).getName());
+        item3.setText(a.get(2).getName());
+        price1.setText(a.get(0).getValue());
+        price2.setText(a.get(1).getValue());
+        price3.setText(a.get(2).getValue());
     }
 
     private void wireWidgets() {
