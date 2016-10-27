@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Game game;
     private Button up, down, left, right, action, inventory;
 
+    public MonsterSpawner monsterSpawner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +24,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wirewidget();
         displayMap(game.getMap());
         displayEvent(game.getEventString());
+
     }
 
     public void displayMap(Map map) {
+
         String display = "";
         for(int y = 0; y < map.getMap().length; y++) {
             for(int x = 0; x < map.getMap()[y].length; x++) {
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             display += "\n";
         }
-
+        map.addMonster(monsterSpawner);
         tvMap.setText(display);
     }
 

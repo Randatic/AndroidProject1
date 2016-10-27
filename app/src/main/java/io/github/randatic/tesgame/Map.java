@@ -1,5 +1,7 @@
 package io.github.randatic.tesgame;
 
+import java.util.Random;
+
 /**
  * Created by Randy on 10/5/16.
  */
@@ -20,6 +22,8 @@ public class Map {
 
     private int[][] mapData;
     private char[][] mapGlobal;
+
+    private MonsterSpawner monsterSpawner;
 
     public Map(Character player) {
         mapData = new int[][] {
@@ -68,7 +72,11 @@ public class Map {
 
     }
 
-    public void addMonster(Monster m) {
+    public void addMonster(MonsterSpawner m) {
+
+        Random random = new Random();
+
+        m.spawn(random.nextInt(9));
 
     }
     public void updateMap(Character player) {

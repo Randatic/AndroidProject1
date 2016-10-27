@@ -7,10 +7,21 @@ import java.util.Random;
  * Created by Ellis on 10/11/2016.
  */
 public class MonsterSpawner extends Monster {
-    public Monster[] allMon = new Monster[27];
-    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon = new ArrayList<>(3);
+
+    public Monster[] allMon;
+    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon;
 
     public MonsterSpawner(){
+        allMon = new Monster[27];
+        mtnMon = new ArrayList<>(3);
+        forestMon = new ArrayList<>(3);
+        desertMon = new ArrayList<>(3);
+        swampMon = new ArrayList<>(3);
+        plainsMon = new ArrayList<>(3);
+        gyMon = new ArrayList<>(3);
+        lakeMon = new ArrayList<>(3);
+        riverMon = new ArrayList<>(3);
+        beachMon = new ArrayList<>(3);
         spawnArrayFiller();
         locMonArrayFill();
     }
