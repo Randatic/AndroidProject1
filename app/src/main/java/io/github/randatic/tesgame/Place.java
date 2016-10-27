@@ -32,4 +32,11 @@ public class Place {
     public char getIcon() {
         return icon;
     }
+
+    public Position setPosition(int x, int y)
+    {
+        position.setX(x);
+        position.setY(y);
+        return position;
+    }
 }

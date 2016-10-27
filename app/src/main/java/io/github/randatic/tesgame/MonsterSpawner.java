@@ -26,38 +26,6 @@ public class MonsterSpawner extends Monster {
         locMonArrayFill();
     }
 
-    private void locMonArrayFill() {
-        for(int i = 0; i > allMon.length-1; i++){
-            if (allMon[i].getArea().equals("Mountain")){
-                mtnMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Forest")){
-                forestMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Desert")){
-                desertMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Swamp")){
-                swampMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Plains")){
-                plainsMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Gyard")){
-                gyMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Lake")){
-                lakeMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("River")){
-                riverMon.add(allMon[i]);
-            }
-            else if (allMon[i].getArea().equals("Beach")){
-                beachMon.add(allMon[i]);
-            }
-        }
-    }
-
     private void spawnArrayFiller() {
         Monster m = new Monster();
         m.deer();
@@ -115,42 +83,37 @@ public class MonsterSpawner extends Monster {
         m.shark();
         allMon[26] = m;
     }
-
-    public Monster spawn(int area){
-        Monster m = new Monster();
-        if (area == 0) {
-            m = spawnMtnMon();
+    private void locMonArrayFill() {
+        for(int i = 0; i > allMon.length; i++){
+            if (allMon[i].getArea().equals("Mountain")){
+                mtnMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Forest")){
+                forestMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Desert")){
+                desertMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Swamp")){
+                swampMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Plains")){
+                plainsMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Gyard")){
+                gyMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Lake")){
+                lakeMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("River")){
+                riverMon.add(allMon[i]);
+            }
+            else if (allMon[i].getArea().equals("Beach")){
+                beachMon.add(allMon[i]);
+            }
         }
-        else if(area == 1){
-            m = spawnForestMon();
-        }
-        else if(area == 2){
-            m = spawnDesertMon();
-        }
-        else if(area == 3){
-            m = SpawnSwampMon();
-        }
-        else if(area == 4){
-            m = spawnPlainMon();
-        }
-        else if(area == 5){
-            m = spawnGraveMon();
-        }
-        else if(area == 6){
-            m = spawnLakeMon();
-        }
-        else if(area == 7){
-            m = spawnRiverMon();
-        }
-        else if(area == 8){
-            m = spawnBeachMon();
-        }
-        else {
-           m.pure();
-        }
-        return m;
     }
-
     private Monster spawnBeachMon() {
         Random r = new Random();
         return beachMon.get(r.nextInt(3));
@@ -195,4 +158,42 @@ public class MonsterSpawner extends Monster {
         Random r = new Random();
         return mtnMon.get(r.nextInt(3));
     }
+
+
+    public Monster spawn(int area){
+        Monster m = new Monster();
+        if (area == 0) {
+            m = spawnMtnMon();
+        }
+        else if(area == 1){
+            m = spawnForestMon();
+        }
+        else if(area == 2){
+            m = spawnDesertMon();
+        }
+        else if(area == 3){
+            m = SpawnSwampMon();
+        }
+        else if(area == 4){
+            m = spawnPlainMon();
+        }
+        else if(area == 5){
+            m = spawnGraveMon();
+        }
+        else if(area == 6){
+            m = spawnLakeMon();
+        }
+        else if(area == 7){
+            m = spawnRiverMon();
+        }
+        else if(area == 8){
+            m = spawnBeachMon();
+        }
+        else {
+           m.pure();
+        }
+        return m;
+    }
+
+
 }

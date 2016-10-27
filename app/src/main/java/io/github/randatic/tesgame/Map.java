@@ -24,6 +24,7 @@ public class Map {
     private char[][] mapGlobal;
 
     private MonsterSpawner monsterSpawner;
+    private Monster monster;
 
     public Map(Character player) {
         mapData = new int[][] {
@@ -45,6 +46,8 @@ public class Map {
 
         mapGlobal = new char[mapData.length][mapData[0].length];
         updateMap(player);
+        monsterSpawner = new MonsterSpawner();
+        monster = new Monster();
 
     }
 
@@ -76,7 +79,52 @@ public class Map {
 
         Random random = new Random();
         monsterSpawner = m;
-        monsterSpawner.spawn(random.nextInt(9));
+        monster = monsterSpawner.spawn(random.nextInt(9));
+        if (monster.getArea().equals("Mountain"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3), random1.nextInt(3));
+        }
+        else if (monster.getArea().equals("Forest"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) + 3, random1.nextInt(3));
+        }
+        else if (monster.getArea().equals("Desert"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) + 6, random1.nextInt(3));
+        }
+        else if (monster.getArea().equals("Swamp"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3), random1.nextInt(3) + 3);
+        }
+        else if (monster.getArea().equals("Plains"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +3, random1.nextInt(3) +3);
+        }
+        else if (monster.getArea().equals("Gyard"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +6, random1.nextInt(3) +3);
+        }
+        else if (monster.getArea().equals("Lake"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3), random1.nextInt(3) +6);
+        }
+        if (monster.getArea().equals("River"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +3, random1.nextInt(3) +6);
+        }
+        else if (monster.getArea().equals("Beach"))
+        {
+            Random random1 = new Random();
+            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +6, random1.nextInt(3) + 6);
+        }
 
     }
     public void updateMap(Character player) {
