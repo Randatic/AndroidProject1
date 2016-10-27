@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void wirewidget()
     {
         game = new Game();
+        monsterSpawner = new MonsterSpawner();
 
         tvMap = (TextView) findViewById(R.id.textViewMap);
         tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
