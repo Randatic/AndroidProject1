@@ -1,5 +1,7 @@
 package io.github.randatic.tesgame;
 
+import java.lang.*;
+
 /**
  * Created by Everyone on 10/7/16.
  */
@@ -432,5 +434,26 @@ public class Monster {
 
     public String getArea() {
         return area;
+    }
+    public String getName() {
+        return name;
+    }
+    public java.lang.Character getIcon() {
+        return icon;
+    }
+    public int getHp() {
+        return hp;
+    }
+    public int getAtk() {
+        return atk;
+    }
+    public int getDef() {
+        return def;
+    }
+    public int getSpd() {
+        return spd;
+    }
+    public int getXp() {
+        return xp;
     }
 }
