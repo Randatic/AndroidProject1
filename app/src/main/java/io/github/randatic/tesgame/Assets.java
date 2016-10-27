@@ -28,6 +28,7 @@ public class Assets {
     public final static Place HULL_HOUSE = new Place(new Position(3, 3), "Hull House", "Settlement House", INN);
     public final static Place CHARLIES_INN = new Place(new Position(10, 6), "Charlie\'s Inn", "A small traveler's inn.", INN);
     public final static Place BURNING_FURNACE = new Place(new Position(5, 11), "The Burning Furnace", "Weapons and Tools Shop", MERCHANT);
+    public final static Place MONSTER_PLACE = new Place(new Position(0,0), "Monster", "Monster", MONSTER);
 
     //Food
 
