@@ -91,5 +91,5 @@ public class Map {
     public char[][] getMap() {
         return mapGlobal;
     }
-    public int[][] getMapDat() { return mapData; }
+    public int[][] getMapData() { return mapData; }
 }

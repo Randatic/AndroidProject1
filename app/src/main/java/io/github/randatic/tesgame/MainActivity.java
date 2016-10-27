@@ -9,9 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
+    
+    public final static String INVENTORY = "inventory";
+    private Map map;
+    private Character player;
+    private String[] events;
+    
     private TextView tvMap, tvEvents;
-    private Game game;
     private Button up, down, left, right, action, inventory;
 
     @Override
@@ -19,12 +23,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        wirewidget();
-        displayMap(game.getMap());
-        displayEvent(game.getEventString());
+        wireWidgets();
+        displayMap();
+        displayEvent();
     }
 
-    public void displayMap(Map map) {
+    public void displayMap() {
         String display = "";
         for(int y = 0; y < map.getMap().length; y++) {
             for(int x = 0; x < map.getMap()[y].length; x++) {
@@ -36,53 +40,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvMap.setText(display);
     }
 
-    public void displayEvent(String events)
+    public void displayEvent()
     {
-        tvEvents.setText(events);
+        tvEvents.setText(getEventString());
     }
 
+    public String getEventString() {
+        String eventString = "";
+
+        for (String e : events) {
+            eventString += e + "\n";
+        }
+        return eventString;
+    }
+    
+    public void Action() {
+        if(map.getMapData()[player.getPosition().getY()][player.getPosition().getX()] == 0) {
+            //something
+        }
+    }
+
+    public void addEvent(String e) {
+        for(int i = 0;i < events.length-1; i++) {
+            events[i] = events[i+1];
+        }
+        events[events.length-1] = e;
+    }
+    
     @Override
     public void onClick(View view)
     {
 
         if (view.getId() == R.id.buttonUp)
         {
-            game.getMap().movePlayer(Map.UP, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(Map.UP, player);
+            displayMap();
+            addEvent("Moved north");
+            displayEvent();
         }
         else if (view.getId() == R.id.buttonRight)
         {
-            game.getMap().movePlayer(Map.RIGHT, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(Map.RIGHT, player);
+            displayMap();
+            addEvent("Moved east");
+            displayEvent();
         }
         else if (view.getId() == R.id.buttonDown)
         {
-            game.getMap().movePlayer(Map.DOWN, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(Map.DOWN, player);
+            displayMap();
+            addEvent("Moved south");
+            displayEvent();
         }
         else if (view.getId() == R.id.buttonLeft)
         {
-            game.getMap().movePlayer(Map.LEFT, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(Map.LEFT, player);
+            displayMap();
+            addEvent("Moved west");
+            displayEvent();
         }
 
         else if (view.getId() == R.id.buttonInventory)
         {
-            startActivity(new Intent(MainActivity.this,ShowPopupWindowInventory.class));
+            Intent i = new Intent(this, ShowPopupWindowInventory.class);
+            i.putExtra(INVENTORY, player.getInv().getItemsAsStringArray());
+            startActivity(i);
         }
         else if (view.getId() == R.id.buttonAction)
         {
-            game.Action();
+            Action();
         }
 
     }
 
-    public void wirewidget()
+    public void wireWidgets()
     {
-        game = new Game();
-
+        events = new String[] {"Welcome to Souls!", "Have fun!", "Don\'t die!", "Testing", "Last line"};
+        player = new Character();
+        map = new Map(player);
+        
         tvMap = (TextView) findViewById(R.id.textViewMap);
-        tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
+        tvMap.setTypeface(Typeface.MONOSPACE); //makes text characters the same size
         tvEvents = (TextView) findViewById(R.id.textViewEvents);
 
         up = (Button) findViewById(R.id.buttonUp);
@@ -97,5 +135,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         right.setOnClickListener(this);
         left.setOnClickListener(this);
         inventory.setOnClickListener(this);
+        action.setOnClickListener(this);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class MonsterSpawner extends Monster {
     public Monster[] allMon = new Monster[27];
-    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon = new ArrayList<>(3);
+    public ArrayList<Monster> mtnMon, forestMon, desertMon, swampMon, plainsMon, gyMon, lakeMon, riverMon, beachMon = new ArrayList<Monster>(3);
 
     public MonsterSpawner(){
         spawnArrayFiller();

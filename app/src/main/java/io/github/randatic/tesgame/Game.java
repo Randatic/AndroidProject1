@@ -4,6 +4,7 @@ package io.github.randatic.tesgame;
  * Created by csaper6 on 10/17/16.
  */
 public class Game {
+
     private Map map;
     private Character player;
     private String[] events;
@@ -23,14 +24,15 @@ public class Game {
 
     public void movePlayer(int direction) {
         map.movePlayer(direction, player);
-    }
 
+    }
 
     public Character getPlayer() {
         return player;
     }
     public Map getMap() {
         return map;
+
     }
     public String getEventString() {
         String eventString = "";
