@@ -118,31 +118,31 @@ public class MonsterSpawner extends Monster {
 
     public Monster spawn(int area){
         Monster m = new Monster();
-        if (area == 1) {
+        if (area == 0) {
             m = spawnMtnMon();
         }
-        else if(area == 2){
+        else if(area == 1){
             m = spawnForestMon();
         }
-        else if(area == 3){
+        else if(area == 2){
             m = spawnDesertMon();
         }
-        else if(area == 4){
+        else if(area == 3){
             m = SpawnSwampMon();
         }
-        else if(area == 5){
+        else if(area == 4){
             m = spawnPlainMon();
         }
-        else if(area == 6){
+        else if(area == 5){
             m = spawnGraveMon();
         }
-        else if(area == 7){
+        else if(area == 6){
             m = spawnLakeMon();
         }
-        else if(area == 8){
+        else if(area == 7){
             m = spawnRiverMon();
         }
-        else if(area == 9){
+        else if(area == 8){
             m = spawnBeachMon();
         }
         else {
