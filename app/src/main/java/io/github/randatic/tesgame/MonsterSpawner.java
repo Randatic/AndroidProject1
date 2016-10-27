@@ -13,15 +13,15 @@ public class MonsterSpawner extends Monster {
 
     public MonsterSpawner(){
         allMon = new Monster[27];
-        mtnMon = new ArrayList<>(3);
-        forestMon = new ArrayList<>(3);
-        desertMon = new ArrayList<>(3);
-        swampMon = new ArrayList<>(3);
-        plainsMon = new ArrayList<>(3);
-        gyMon = new ArrayList<>(3);
-        lakeMon = new ArrayList<>(3);
-        riverMon = new ArrayList<>(3);
-        beachMon = new ArrayList<>(3);
+        mtnMon = new ArrayList<Monster>(3);
+        forestMon = new ArrayList<Monster>(3);
+        desertMon = new ArrayList<Monster>(3);
+        swampMon = new ArrayList<Monster>(3);
+        plainsMon = new ArrayList<Monster>(3);
+        gyMon = new ArrayList<Monster>(3);
+        lakeMon = new ArrayList<Monster>(3);
+        riverMon = new ArrayList<Monster>(3);
+        beachMon = new ArrayList<Monster>(3);
         spawnArrayFiller();
         locMonArrayFill();
     }

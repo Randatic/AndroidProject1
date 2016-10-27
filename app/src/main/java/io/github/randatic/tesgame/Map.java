@@ -75,8 +75,8 @@ public class Map {
     public void addMonster(MonsterSpawner m) {
 
         Random random = new Random();
-
-        m.spawn(random.nextInt(9));
+        monsterSpawner = m;
+        monsterSpawner.spawn(random.nextInt(9));
 
     }
     public void updateMap(Character player) {
