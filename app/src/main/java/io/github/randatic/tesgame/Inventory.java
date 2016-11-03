@@ -48,11 +48,4 @@ public class Inventory {
         return inventory.size();
     }
 
-    public String[] getItemsAsStringArray() {
-        String[] inv = new String[inventory.size()];
-        for (int i = 0; i < inventory.size(); i++) {
-            inv[i] =  inventory.get(i).getItemName();
-        }
-        return inv;
-    }
 }
