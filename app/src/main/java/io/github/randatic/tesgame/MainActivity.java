@@ -7,28 +7,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    public static final String INVENTORY = "inventory";
+    public static final String STATS = "stats";
+    public static final String PLACE_INFO = "place_info";
+    public static final int RESTED_REQUEST = 0;
+
     private TextView tvMap, tvEvents;
-    private Game game;
     private Button up, down, left, right, action, inventory;
 
-    public MonsterSpawner monsterSpawner;
+    private Map map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        wirewidget();
-        displayMap(game.getMap());
-        displayEvent(game.getEventString());
+        wireWidgets();
+        displayMap();
 
     }
 
-    public void displayMap(Map map) {
-
+    public void displayMap() {
         String display = "";
         for(int y = 0; y < map.getMap().length; y++) {
             for(int x = 0; x < map.getMap()[y].length; x++) {
@@ -36,8 +39,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             display += "\n";
         }
-        map.addMonster(monsterSpawner);
         tvMap.setText(display);
+    }
+
+    public void action() {
+        Toast.makeText(this, "Action method", Toast.LENGTH_SHORT).show();
+        Place p = map.getPlaceAtPlayer();
+        if(p!=null) {
+            Intent i;
+            if(p.getType().equals(Place.INN)) {
+                i = new Intent(this, InnActivity.class);
+                i.putExtra(PLACE_INFO, new String[] {p.getName(), p.getDescription()});
+                startActivityForResult(i, RESTED_REQUEST);
+                Toast.makeText(this, "intent should start", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     public void displayEvent(String events)
@@ -48,43 +64,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-
         if (view.getId() == R.id.buttonUp)
         {
-            game.getMap().movePlayer(Map.UP, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(map.NORTH);
+            map.update();
+            displayMap();
         }
         else if (view.getId() == R.id.buttonRight)
         {
-            game.getMap().movePlayer(Map.RIGHT, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(map.EAST);
+            map.update();
+            displayMap();
         }
         else if (view.getId() == R.id.buttonDown)
         {
-            game.getMap().movePlayer(Map.DOWN, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(map.SOUTH);
+            map.update();
+            displayMap();
         }
         else if (view.getId() == R.id.buttonLeft)
         {
-            game.getMap().movePlayer(Map.LEFT, game.getPlayer());
-            displayMap(game.getMap());
+            map.movePlayer(map.WEST);
+            map.update();
+            displayMap();
         }
 
         else if (view.getId() == R.id.buttonInventory)
         {
-            startActivity(new Intent(MainActivity.this,ShowPopupWindowInventory.class));
+            Intent i = new Intent(this, ShowPopupWindowInventory.class);
+            i.putExtra(INVENTORY, map.player.getInventory().getItemsAsStringArray());
+            i.putExtra(STATS, map.player.getStatsFormattedStringArray());
+            startActivity(i);
         }
         else if (view.getId() == R.id.buttonAction)
         {
-            game.Action();
+            action();
         }
 
     }
 
-    public void wirewidget()
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode==RESTED_REQUEST) {
+            if (resultCode == InnActivity.RESULT_OK) {
+                map.player.resetHp();
+            }
+        }
+    }
+
+    public void wireWidgets()
     {
-        game = new Game();
-        monsterSpawner = new MonsterSpawner();
+        map = new Map();
 
         tvMap = (TextView) findViewById(R.id.textViewMap);
         tvMap.setTypeface(Typeface.MONOSPACE); //makes characters the same size
@@ -102,5 +132,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         right.setOnClickListener(this);
         left.setOnClickListener(this);
         inventory.setOnClickListener(this);
+        action.setOnClickListener(this);
     }
 }

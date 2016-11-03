@@ -5,13 +5,15 @@ package io.github.randatic.tesgame;
  */
 public class Food extends Item {
 
-    public Food(String itemName, String itemDescription, int value) {
-        super(itemName, itemDescription, value);
+    private int affect;
+
+    public Food(String itemName, int value, int affect) {
+        super(itemName, value, Item.FOOD);
+        this.affect = affect;
     }
 
-    public int HealthRecovered() {
-        return super.getValue();
+    public int getAffect() {
+        return affect;
     }
-
 }
 

@@ -5,22 +5,10 @@ package io.github.randatic.tesgame;
  */
 public class Weapon extends Item{
 
+    private String description;
 
-    public Weapon(String weaponName, String weaponDescription, int value) {
-        super(weaponName, weaponDescription, value);
+    public Weapon(String weaponName, int value, String description) {
+        super(weaponName, value, Item.WEAPON);
+        this.description = description;
     }
-
-    public int getDamage()
-    {
-        return super.getValue();
-    }
-
-    public int getPrice(){
-        return super.getValue()*10;
-    }
-
-    public String getName(){
-        return super.getItemName();
-    }
-
 }

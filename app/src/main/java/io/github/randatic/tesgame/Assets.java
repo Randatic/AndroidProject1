@@ -7,47 +7,27 @@ package io.github.randatic.tesgame;
  */
 public class Assets {
 
-    //Map Directions
-    public final static int UP = 0;
-    public final static int RIGHT = 1;
-    public final static int DOWN = 2;
-    public final static int LEFT = 3;
-
-    //Icons
-    public final static char UNDISCOVERED = '#';    //0
-    public final static char BOUND = '~';           //1
-    public final static char NOTHING = '.';         //2
-
-    public final static char PLAYER = '@';          //3
-    public final static char MONSTER = 'M';         //4
-
-    public final static char INN = 'I';             //5
-    public final static char MERCHANT = '$';        //6
-
     //Places
-    public final static Place HULL_HOUSE = new Place(new Position(3, 3), "Hull House", "Settlement House", INN);
-    public final static Place CHARLIES_INN = new Place(new Position(10, 6), "Charlie\'s Inn", "A small traveler's inn.", INN);
-    public final static Place BURNING_FURNACE = new Place(new Position(5, 11), "The Burning Furnace", "Weapons and Tools Shop", MERCHANT);
-    public final static Place MONSTER_PLACE = new Place(new Position(0,0), "Monster", "Monster", MONSTER);
+    public final static Place HULL_HOUSE = new Place("Hull House", "Settlement House", Place.INN, new Position(3, 3));
+    public final static Place CHARLIES_INN = new Place("Charlie\'s Inn", "A small traveler's inn.", Place.INN, new Position(10, 6));
+    public final static Place BURNING_FURNACE = new Place("The Burning Furnace", "Weapons and Tools Shop", Place.MERCHANT, new Position(5, 11));
 
     //Food
-
-    public final static Food APPLE = new Food("Apple", "An Apple", 10);
-    public final static Food PORTION = new Food("Portion", "Portion", 30);
-    public final static Food Large_PORTION = new Food("Large Potion", "Large Potion", 100);
-    public final static Food FULL_HEALTH = new Food("Full Health", "Health potion that recovers all health", 100);
+    public final static Food APPLE = new Food("Apple", 1, 10);
+    public final static Food PORTION = new Food("Portion", 1, 30);
+    public final static Food LARGE_PORTION = new Food("Large Portion", 1, 25);
+    public final static Food HEALTH_POTION = new Food("Health Potion", 1, 50);
 
     //Weapons
-    public final static Weapon BSWORD = new Weapon("Basic Sword", "A simple sword, made of iron.", 5);
-    public final static Weapon SSWORD = new Weapon("Steal Sword", "A sharp sword, made to steel.", 10);
-    public final static Weapon MATCHETE = new Weapon("Machete", "A worn machete.", 3);
-    public final static Weapon BLKSWORD = new Weapon("Black Sword", "A matte black sword", 15);
-    public final static Weapon WHTSWORD = new Weapon("White Sword", "A unnaturally white sword", 20);
-    public final static Weapon GUTSWORD = new Weapon("Guitar Sword", "A sword which is a guitar", 7);
-    public final static Weapon NOVASWORD = new Weapon("Nova Sword", "A sword heated to the temperature of a Nova", 30);
-    public final static Weapon SHADESWORD = new Weapon("Shade Sword", "A sword sword made from shadow", 35);
+    public final static Weapon BSWORD = new Weapon("Basic Sword", 5, "A simple sword, made of iron.");
+    public final static Weapon SSWORD = new Weapon("Steal Sword", 10, "A sharp sword, made to steel.");
+    public final static Weapon MATCHETE = new Weapon("Machete", 3, "A worn machete.");
+    public final static Weapon BLKSWORD = new Weapon("Black Sword", 15, "A matte black sword");
+    public final static Weapon WHTSWORD = new Weapon("White Sword", 20, "A unnaturally white sword");
+    public final static Weapon GUTSWORD = new Weapon("Guitar Sword", 7, "A sword which is a guitar");
+    public final static Weapon NOVASWORD = new Weapon("Nova Sword", 30, "A sword heated to the temperature of a Nova");
+    public final static Weapon SHADESWORD = new Weapon("Shade Sword", 35, "A sword sword made from shadow");
 
     //Arrays
-    public static char[] ICONS = {UNDISCOVERED, BOUND, NOTHING, PLAYER, MONSTER, INN, MERCHANT};
     public static Place[] PLACES = {HULL_HOUSE, CHARLIES_INN, BURNING_FURNACE};
 }
