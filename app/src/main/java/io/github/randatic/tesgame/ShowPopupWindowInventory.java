@@ -35,7 +35,7 @@ public class ShowPopupWindowInventory extends Activity{
         inv = i.getStringArrayExtra(MainActivity.INVENTORY);
         stats = i.getStringArrayExtra(MainActivity.STATS);
         for(String s:stats) {
-            statsText += s;
+            statsText += s + "\n";
         }
         for(String s : inv) {
             invText += s + "\n";

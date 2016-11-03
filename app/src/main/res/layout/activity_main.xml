@@ -32,7 +32,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/left"
+            android:text="@string/west"
             android:id="@+id/buttonLeft"/>
 
         <LinearLayout
@@ -44,13 +44,13 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/up"
+                android:text="@string/north"
                 android:id="@+id/buttonUp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/down"
+                android:text="@string/south"
                 android:id="@+id/buttonDown"/>
 
         </LinearLayout>
@@ -58,7 +58,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/right"
+            android:text="@string/east"
             android:id="@+id/buttonRight"/>
 
         <LinearLayout

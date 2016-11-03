@@ -47,4 +47,5 @@ public class Inventory {
     public int size() {
         return inventory.size();
     }
+
 }
