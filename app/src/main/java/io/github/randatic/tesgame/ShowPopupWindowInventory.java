@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -12,37 +11,38 @@ import android.widget.TextView;
  */
 public class ShowPopupWindowInventory extends Activity{
 
-    private String invAdd;
-    private TextView tvInv;
-    private LinearLayout[] layout;
-    private String[] inv;
+    private TextView textViewInv, textViewStats;
+    private String invText, statsText;
+    private String[] inv, stats;
 
-
-
-
-    protected void onCreate(Bundle savedinstanceState)
-    {
-        super.onCreate(savedinstanceState);
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.showpopupwindowinventory);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-        getWindow().setLayout((int) (width * .91), (int)(height * .6));
-        tvInv = (TextView) findViewById(R.id.textViewInv);
+        getWindow().setLayout((int) (width * .91), (int) (height * .6));
 
-        invAdd = "";
+        textViewInv = (TextView) findViewById(R.id.textView_inventory);
+        textViewStats = (TextView) findViewById(R.id.textView_stats);
+
+        statsText = "";
+        invText = "";
 
         Intent i = getIntent();
         inv = i.getStringArrayExtra(MainActivity.INVENTORY);
-
+        stats = i.getStringArrayExtra(MainActivity.STATS);
+        for(String s:stats) {
+            statsText += s;
+        }
         for(String s : inv) {
-            invAdd += s + "\n";
+            invText += s + "\n";
         }
 
-        tvInv.setText(invAdd);
+        textViewInv.setText(invText);
+        textViewStats.setText(statsText);
     }
 }
+

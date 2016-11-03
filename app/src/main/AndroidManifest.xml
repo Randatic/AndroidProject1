@@ -18,12 +18,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CharacterActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ShowPopupWindowInventory"
             android:theme="@style/AppTheme.CustomTheme"></activity>
-
+        <activity android:name=".InnActivity"></activity>
     </application>
 
 </manifest>

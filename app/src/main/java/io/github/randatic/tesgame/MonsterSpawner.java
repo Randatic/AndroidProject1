@@ -1,5 +1,7 @@
 package io.github.randatic.tesgame;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -84,32 +86,33 @@ public class MonsterSpawner extends Monster {
         allMon[26] = m;
     }
     private void locMonArrayFill() {
-        for(int i = 0; i > allMon.length; i++){
-            if (allMon[i].getArea().equals("Mountain")){
+        for(int i = 0; i < allMon.length; i++){
+            Log.d("LOOK AT ME:", "locMonArrayFill: " + allMon[i].getArea().toString());
+            if (i < 3){
                 mtnMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Forest")){
+            else if (i < 6){
                 forestMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Desert")){
+            else if (i < 9){
                 desertMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Swamp")){
+            else if (i < 12){
                 swampMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Plains")){
+            else if (i < 15){
                 plainsMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Gyard")){
+            else if (i < 18){
                 gyMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Lake")){
+            else if (i < 21){
                 lakeMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("River")){
+            else if (i < 24){
                 riverMon.add(allMon[i]);
             }
-            else if (allMon[i].getArea().equals("Beach")){
+            else if (i < 27){
                 beachMon.add(allMon[i]);
             }
         }

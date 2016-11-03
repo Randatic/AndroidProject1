@@ -1,40 +1,44 @@
 package io.github.randatic.tesgame;
 
-/**
- * Created by Randy on 10/10/2016.
- */
 public class Position {
 
-    private int X;
-    private int Y;
-
-    public Position (int x, int y) {
-        X = x;
-        Y = y;
+    private int x, y;
+    private int[] pos;
+    public Position(int X, int Y) {
+        x = X;
+        y = Y;
+        pos = new int[] {x, y};
     }
 
+    public boolean equalsPos(Position p) {
+        if(p.getX()==x&&p.getY()==y)
+            return true;
+        return false;
+    }
+    //Setters
+    public void setX(int X) {
+        x = X;
+        pos[0] = x;
+    }
+    public void setY(int Y) {
+        y = Y;
+        pos[1] = Y;
+    }
+    public void setPosArray(int[] position) {
+        x = position[0];
+        y = position[1];
+        pos[0] = x;
+        pos[1] = y;
+    }
+
+    //Getters
     public int getX() {
-        return X;
+        return x;
     }
-
     public int getY() {
-        return Y;
+        return y;
     }
-
-    public int[] getPosition() {
-        return new int[] {X, Y};
-    }
-
-    public void setX(int x) {
-        X = x;
-    }
-
-    public void setY (int y) {
-        Y = y;
-    }
-
-    public void setPosition(int[] position) {
-        X = position[0];
-        Y = position[1];
+    public int[] getPosArray() {
+        return pos;
     }
 }

@@ -1,151 +1,106 @@
 package io.github.randatic.tesgame;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by Randy on 10/5/16.
- */
 public class Map {
 
-    public final static int UP = 0;
-    public final static int RIGHT = 1;
-    public final static int DOWN = 2;
-    public final static int LEFT = 3;
+    public static final int NORTH = 0;
+    public static final int EAST = 1;
+    public static final int SOUTH = 2;
+    public static final int WEST = 3;
 
-    //  ---|LEGEND|---
-    private final static char BOUND = '~';
-    private final static char UNDISCOVERED = '#';
-    private final static char NOTHING = '.';
+    public static final char NOTHING = '#';
+    public static final char BOUND = '~';
 
-    //Variables
-    private final static char[] LEGEND = Assets.ICONS;
+    public static final char[] LEGEND = new char[] {NOTHING, BOUND};
+
+    private Place[] places;
+    private List<Character> characters;
 
     private int[][] mapData;
-    private char[][] mapGlobal;
+    private char[][] mapChar;
 
-    private MonsterSpawner monsterSpawner;
-    private Monster monster;
+    public Player player;
 
-    public Map(Character player) {
+    public Map() {
         mapData = new int[][] {
-                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                //0,1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, //0
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //1
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //2
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //3
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //4
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //5
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //6
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //7
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //8
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //9
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //10
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //11
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //12
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}, //13
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}  //14
         };
 
-        mapGlobal = new char[mapData.length][mapData[0].length];
-        updateMap(player);
-        monsterSpawner = new MonsterSpawner();
-        monster = new Monster();
+        mapChar = new char[mapData.length][mapData[0].length];
 
+        player = new Player("Human", new Position(7, 7));
+
+        characters = new ArrayList<Character>();
+        characters.add(player);
+        places = new Place[] {Assets.HULL_HOUSE, Assets.BURNING_FURNACE, Assets.CHARLIES_INN};
+        update();
     }
 
-    public char movePlayer(int direction, Character player) {
-        if(direction==UP) {
-            if(mapData[player.getPosition().getY()-1][player.getPosition().getX()]!=1) {
-                player.setPosition(player.getPosition().getX(), player.getPosition().getY()-1);
+    public void movePlayer(int direction) {
+        Position p = player.getPosition();
+        if(direction == NORTH) {
+            if(p.getY() > 1) {
+                player.moveNorth();
             }
-        } else if(direction==RIGHT) {
-            if(mapData[player.getPosition().getY()][player.getPosition().getX()+1]!=1) {
-                player.setPosition(player.getPosition().getX()+1, player.getPosition().getY());
+        } else if(direction == EAST) {
+            if(p.getX() < 13) {
+                player.moveEast();
             }
-        } else if(direction==DOWN) {
-            if(mapData[player.getPosition().getY()+1][player.getPosition().getX()]!=1) {
-                player.setPosition(player.getPosition().getX(), player.getPosition().getY()+1);
+        } else if(direction == SOUTH) {
+            if(p.getY() < 13) {
+                player.moveSouth();
             }
-        } else if(direction==LEFT) {
-            if(mapData[player.getPosition().getY()][player.getPosition().getX()-1]!=1) {
-                player.setPosition(player.getPosition().getX()-1, player.getPosition().getY());
+        } else if(direction == WEST) {
+            if(p.getX() > 1) {
+                player.moveWest();
             }
         }
-
-        updateMap(player);
-        return placeAt(new Position(player.getPosition().getX(), player.getPosition().getY()));
-
     }
 
-    public void addMonster(MonsterSpawner m) {
-
-        Random random = new Random();
-        monsterSpawner = m;
-        monster = monsterSpawner.spawn(random.nextInt(9));
-        if (monster.getArea().equals("Mountain"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3), random1.nextInt(3));
-        }
-        else if (monster.getArea().equals("Forest"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) + 3, random1.nextInt(3));
-        }
-        else if (monster.getArea().equals("Desert"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) + 6, random1.nextInt(3));
-        }
-        else if (monster.getArea().equals("Swamp"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3), random1.nextInt(3) + 3);
-        }
-        else if (monster.getArea().equals("Plains"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +3, random1.nextInt(3) +3);
-        }
-        else if (monster.getArea().equals("Gyard"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +6, random1.nextInt(3) +3);
-        }
-        else if (monster.getArea().equals("Lake"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3), random1.nextInt(3) +6);
-        }
-        if (monster.getArea().equals("River"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +3, random1.nextInt(3) +6);
-        }
-        else if (monster.getArea().equals("Beach"))
-        {
-            Random random1 = new Random();
-            Assets.MONSTER_PLACE.setPosition(random1.nextInt(3) +6, random1.nextInt(3) + 6);
-        }
-
-    }
-    public void updateMap(Character player) {
+    public void update() {
         for(int y = 0; y < mapData.length; y++) {
-            for(int x = 0; x < mapData[y].length;x++) {
-                mapGlobal[y][x] = LEGEND[mapData[y][x]];
+            for(int x = 0; x <mapData[y].length; x++) {
+                mapChar[y][x] = LEGEND[mapData[y][x]];
             }
         }
-
-        for(Place p : Assets.PLACES) {
-           mapGlobal[p.getPosition().getY()][p.getPosition().getX()] = p.getIcon();
+        for(Place p : places) {
+            mapChar[p.getPosition().getY()][p.getPosition().getX()] = p.getIcon();
         }
-        mapGlobal[player.getPosition().getY()][player.getPosition().getX()] = LEGEND[3];
+        for(Character c : characters) {
+            mapChar[c.getPosition().getY()][c.getPosition().getX()] = c.getIcon();
+        }
     }
 
-    public char placeAt(Position p) {
-        return LEGEND[mapData[p.getY()][p.getX()]];
+    public Place getPlaceAtPlayer() {
+        for (Place p : places) {
+            if(p.getPosition().equalsPos(player.getPosition())) {
+                return p;
+            }
+        }
+        return null;
     }
-
+    public int[][] getMapData() {
+        return mapData;
+    }
     public char[][] getMap() {
-        return mapGlobal;
+        return mapChar;
     }
-    public int[][] getMapData() { return mapData; }
+
 }
