@@ -52,6 +52,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i.putExtra(PLACE_INFO, new String[] {p.getName(), p.getDescription()});
                 startActivityForResult(i, RESTED_REQUEST);
                 Toast.makeText(this, "intent should start", Toast.LENGTH_SHORT).show();
+
+            }
+            else if (p.getType().equals(Place.MERCHANT))
+            {
+                i = new Intent(this, ShopActivity.class);
+                startActivityForResult(i, RESTED_REQUEST);
+                Toast.makeText(this, "intent should start", Toast.LENGTH_SHORT).show();
             }
         }
     }

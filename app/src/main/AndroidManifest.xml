@@ -20,7 +20,11 @@
         <activity
             android:name=".ShowPopupWindowInventory"
             android:theme="@style/AppTheme.CustomTheme"></activity>
-        <activity android:name=".InnActivity"></activity>
+        <activity android:name=".InnActivity"
+            android:theme="@style/AppTheme.CustomTheme">
+        </activity>
+        <activity android:name=".ShopActivity"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
     </application>
 
 </manifest>

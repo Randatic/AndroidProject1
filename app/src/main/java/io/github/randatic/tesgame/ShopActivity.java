@@ -2,6 +2,7 @@ package io.github.randatic.tesgame;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +20,13 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+        getWindow().setLayout((int) (width * .91), (int) (height * .6));
+
         Shop s = new Shop();
         wireWidgets();
         stockShop(s.getItems());
@@ -28,9 +36,9 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
         item1.setText(a.get(0).getName());
         item2.setText(a.get(1).getName());
         item3.setText(a.get(2).getName());
-        price1.setText(a.get(0).getValue());
-        price2.setText(a.get(1).getValue());
-        price3.setText(a.get(2).getValue());
+        price1.setText("" + a.get(0).getValue());
+        price2.setText("" + a.get(1).getValue());
+        price3.setText("" + a.get(2).getValue());
     }
 
     private void wireWidgets() {
