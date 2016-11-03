@@ -18,6 +18,7 @@ public class Player extends Character{
         lvl = 1;
         atk = 10;
         def = 15;
+        wallet.increaseValue(20);
     }
     public void getItem(Item e) {
         inv.addItem(e);
@@ -60,6 +61,14 @@ public class Player extends Character{
     }
     public void consume(Food f) {
 
+    }
+
+    public void decreaseMoney(int i ) {
+        wallet.decreaseValue(i);
+    }
+
+    public void increaseMoney(int i ) {
+        wallet.increaseValue(i);
     }
 
     //getters

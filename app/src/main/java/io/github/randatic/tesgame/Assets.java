@@ -20,7 +20,7 @@ public class Assets {
 
     //Weapons
     public final static Weapon BSWORD = new Weapon("Basic Sword", 5, "A simple sword, made of iron.", 1000);
-    public final static Weapon SSWORD = new Weapon("Steal Sword", 10, "A sharp sword, made to steel.", 1001);
+    public final static Weapon SSWORD = new Weapon("Steel Sword", 10, "A sharp sword, made to steel.", 1001);
     public final static Weapon MATCHETE = new Weapon("Machete", 3, "A worn machete.", 1002);
     public final static Weapon BLKSWORD = new Weapon("Black Sword", 15, "A matte black sword", 1003);
     public final static Weapon WHTSWORD = new Weapon("White Sword", 20, "A unnaturally white sword", 1004);

@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this, InnActivity.class);
                 i.putExtra(PLACE_INFO, new String[] {p.getName(), p.getDescription()});
                 startActivityForResult(i, RESTED_REQUEST);
-
             }
             else if (p.getType().equals(Place.MERCHANT))
             {
@@ -120,12 +118,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (requestCode==MERCHANT_REQUEST) {
             if(resultCode == Activity.RESULT_OK) {
                 for(Weapon e : Assets.WEAPONS) {
-                    if(e.getID()==data.getIntExtra(ShopActivity.PURCHASED_WEAPON_ID, -1))
+                    if (e.getID() == data.getIntExtra(ShopActivity.PURCHASED_WEAPON_ID, -1)) {
                         map.player.getItem(e);
+                        map.player.decreaseMoney(e.getValue());
+                    }
                 }
-                Toast.makeText(MainActivity.this, "resultOk", Toast.LENGTH_SHORT).show();
             }
-            //Toast.makeText(MainActivity.this, "MRequest", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -1,6 +1,5 @@
 package io.github.randatic.tesgame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -75,13 +74,22 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.button_item1) {
-            i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(0).getID());
+            if(money >= weapons.get(0).getValue()) {
+                i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(0).getID());
+                finish();
+            }
         } else  if(view.getId()==R.id.button_item2) {
-            i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(1).getID());
+
+            if(money >= weapons.get(0).getValue()) {
+                i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(1).getID());
+                finish();
+            }
         } else  if(view.getId()==R.id.button_item3) {
-            i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(2).getID());
+            if(money >= weapons.get(0).getValue()) {
+                i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(2).getID());
+                finish();
+            }
         }
-        setResult(Activity.RESULT_OK, i1);
         finish();
     }
 }
