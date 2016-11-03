@@ -43,7 +43,6 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
         Intent i = getIntent();
         i1 = new Intent();
         money = i.getIntExtra(MainActivity.CASH, -1);
-        setResult(Activity.RESULT_CANCELED);
     }
 
     private void stockShop(ArrayList<Weapon> weapons) {

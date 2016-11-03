@@ -1,5 +1,6 @@
 package io.github.randatic.tesgame;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this, InnActivity.class);
                 i.putExtra(PLACE_INFO, new String[] {p.getName(), p.getDescription()});
                 startActivityForResult(i, RESTED_REQUEST);
-                Toast.makeText(this, "intent should start", Toast.LENGTH_SHORT).show();
 
             }
             else if (p.getType().equals(Place.MERCHANT))
@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this, ShopActivity.class);
                 i.putExtra(CASH, map.player.getWallet().getValue());
                 startActivityForResult(i, MERCHANT_REQUEST);
-                Toast.makeText(this, "merchant", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -115,16 +114,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode==RESTED_REQUEST) {
-            if (resultCode == InnActivity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK) {
                 map.player.resetHp();
             }
         } else if (requestCode==MERCHANT_REQUEST) {
-            if(requestCode == ShopActivity.RESULT_OK) {
+            if(resultCode == Activity.RESULT_OK) {
                 for(Weapon e : Assets.WEAPONS) {
                     if(e.getID()==data.getIntExtra(ShopActivity.PURCHASED_WEAPON_ID, -1))
                         map.player.getItem(e);
                 }
+                Toast.makeText(MainActivity.this, "resultOk", Toast.LENGTH_SHORT).show();
             }
+            //Toast.makeText(MainActivity.this, "MRequest", Toast.LENGTH_SHORT).show();
         }
     }
 
