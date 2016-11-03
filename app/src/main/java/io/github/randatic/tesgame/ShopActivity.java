@@ -1,5 +1,7 @@
 package io.github.randatic.tesgame;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -13,8 +15,14 @@ import java.util.ArrayList;
  * Created by Ellis on 10/21/2016.
  */
 public class ShopActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button item1, item2, item3;
-    private TextView price1, price2, price3, money;
+
+    public static final String PURCHASED_WEAPON_ID = "pwid";
+    private Button btnItem1, btnItem2, btnItem3;
+    private TextView tvItem1, tvItem2, tvItem3, tvMoney;
+    private int money;
+    private Intent i1;
+    private Shop shop;
+    private ArrayList<Weapon> weapons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,32 +35,54 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
         int height = dm.heightPixels;
         getWindow().setLayout((int) (width * .91), (int) (height * .6));
 
-        Shop s = new Shop();
+        shop = new Shop();
+        weapons = shop.getItems();
         wireWidgets();
-        stockShop(s.getItems());
+        stockShop(weapons);
+
+        Intent i = getIntent();
+        i1 = new Intent();
+        money = i.getIntExtra(MainActivity.CASH, -1);
+        setResult(Activity.RESULT_CANCELED);
     }
 
-    private void stockShop(ArrayList<Weapon> a) {
-        item1.setText(a.get(0).getName());
-        item2.setText(a.get(1).getName());
-        item3.setText(a.get(2).getName());
-        price1.setText("" + a.get(0).getValue());
-        price2.setText("" + a.get(1).getValue());
-        price3.setText("" + a.get(2).getValue());
+    private void stockShop(ArrayList<Weapon> weapons) {
+        //Item
+        tvItem1.setText(weapons.get(0).getName());
+        tvItem2.setText(weapons.get(1).getName());
+        tvItem3.setText(weapons.get(2).getName());
+        //price
+        btnItem1.setText("" + weapons.get(0).getValue());
+        btnItem2.setText("" + weapons.get(1).getValue());
+        btnItem3.setText("" + weapons.get(2).getValue());
+
+        tvMoney.setText("Money: " + money);
     }
 
     private void wireWidgets() {
-        item1 = (Button) findViewById(R.id.button_item1);
-        item2 = (Button) findViewById(R.id.button_item2);
-        item3 = (Button) findViewById(R.id.button_item3);
-        price1 = (TextView) findViewById(R.id.textView_price1);
-        price2 = (TextView) findViewById(R.id.textView_price2);
-        price3 = (TextView) findViewById(R.id.textView_price3);
-        money = (TextView) findViewById(R.id.textView_cash);
+        btnItem1 = (Button) findViewById(R.id.button_item1);
+        btnItem2 = (Button) findViewById(R.id.button_item2);
+        btnItem3 = (Button) findViewById(R.id.button_item3);
+        tvItem1 = (TextView) findViewById(R.id.textView_item1);
+        tvItem2 = (TextView) findViewById(R.id.textView_item2);
+        tvItem3 = (TextView) findViewById(R.id.textView_item3);
+        tvMoney = (TextView) findViewById(R.id.textView_money);
+
+        btnItem1.setOnClickListener(this);
+        btnItem2.setOnClickListener(this);
+        btnItem3.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-
+        if(view.getId()==R.id.button_item1) {
+            i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(0).getID());
+        } else  if(view.getId()==R.id.button_item2) {
+            i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(1).getID());
+        } else  if(view.getId()==R.id.button_item3) {
+            i1.putExtra(PURCHASED_WEAPON_ID, weapons.get(2).getID());
+        }
+        setResult(Activity.RESULT_OK, i1);
+        finish();
     }
 }

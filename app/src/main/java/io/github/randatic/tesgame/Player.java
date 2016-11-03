@@ -19,6 +19,9 @@ public class Player extends Character{
         atk = 10;
         def = 15;
     }
+    public void getItem(Item e) {
+        inv.addItem(e);
+    }
 
     //Misc
     public boolean isDead() {

@@ -26,6 +26,7 @@ public class InnActivity extends Activity implements View.OnClickListener{
 
         Intent i = getIntent();
 
+
         setResult(Activity.RESULT_CANCELED);
 
         tvWelcome = (TextView) findViewById(R.id.textView_welcome);

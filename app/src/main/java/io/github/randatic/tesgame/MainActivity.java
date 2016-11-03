@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String INVENTORY = "inventory";
     public static final String STATS = "stats";
     public static final String PLACE_INFO = "place_info";
+    public static final String CASH = "cash";
     public static final int RESTED_REQUEST = 0;
+    public static final int MERCHANT_REQUEST = 1;
 
     private TextView tvMap, tvEvents;
     private Button up, down, left, right, action, inventory;
@@ -43,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void action() {
-        Toast.makeText(this, "Action method", Toast.LENGTH_SHORT).show();
         Place p = map.getPlaceAtPlayer();
         if(p!=null) {
             Intent i;
@@ -57,8 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else if (p.getType().equals(Place.MERCHANT))
             {
                 i = new Intent(this, ShopActivity.class);
-                startActivityForResult(i, RESTED_REQUEST);
-                Toast.makeText(this, "intent should start", Toast.LENGTH_SHORT).show();
+                i.putExtra(CASH, map.player.getWallet().getValue());
+                startActivityForResult(i, MERCHANT_REQUEST);
+                Toast.makeText(this, "merchant", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -115,6 +117,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(requestCode==RESTED_REQUEST) {
             if (resultCode == InnActivity.RESULT_OK) {
                 map.player.resetHp();
+            }
+        } else if (requestCode==MERCHANT_REQUEST) {
+            if(requestCode == ShopActivity.RESULT_OK) {
+                for(Weapon e : Assets.WEAPONS) {
+                    if(e.getID()==data.getIntExtra(ShopActivity.PURCHASED_WEAPON_ID, -1))
+                        map.player.getItem(e);
+                }
             }
         }
     }
