@@ -5,6 +5,7 @@ package io.github.randatic.tesgame;
  */
 public class Food extends Item {
 
+    static final String[] AFFECT = {"Increases your health.", };
     private int affect;
 
     public Food(String itemName, int value, int affect) {
@@ -12,8 +13,11 @@ public class Food extends Item {
         this.affect = affect;
     }
 
-    public int getAffect() {
+    public int getAffectCode() {
         return affect;
+    }
+    public String getAffect() {
+        return AFFECT[affect];
     }
 }
 

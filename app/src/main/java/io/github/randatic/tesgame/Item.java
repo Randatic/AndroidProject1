@@ -2,15 +2,15 @@ package io.github.randatic.tesgame;
 
 public class Item {
 
-    public static final String WEAPON = "weapon";
-    public static final String FOOD = "food";
-    public static final String WALLET = "wallet";
+    public static final int WEAPON = 0;
+    public static final int FOOD = 1;
+    public static final int WALLET = 2;
 
     private String name;
     private int value;
-    private String type;
+    private int type;
 
-    public Item(String name, int value, String type) {
+    public Item(String name, int value, int type) {
         this.name = name;
         this.value = value;
         this.type = type;
@@ -20,12 +20,8 @@ public class Item {
     public void increaseValue(int n) {
         value += n;
     }
-    public boolean decreaseValue(int n) {
-        if(n > value) {
-            return false;
-        }
-        value -= value;
-        return true;
+    public void decreaseValue(int n) {
+        value -= n;
     }
 
     //Setters
@@ -40,7 +36,7 @@ public class Item {
     public int getValue() {
         return value;
     }
-    public String getType() {
+    public int getType() {
         return type;
     }
 
