@@ -11,7 +11,7 @@ public class Inventory {
     }
 
     public void addItem(Item item) {
-        if (item.getType().equals("FOOD")) {
+        if (item.getType() == Item.FOOD) {
 
         }
 
